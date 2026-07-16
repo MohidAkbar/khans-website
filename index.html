@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khan's Taxi - Uw Betrouwbare Chauffeur in Nederland</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main: #F59E0B;
+            --main-dark: #D97706;
+            --main-light: #FBBF24;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f0f1a;
+            color: #fff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.85); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(245,158,11,0.3); }
+            50% { box-shadow: 0 0 40px rgba(245,158,11,0.6); }
+        }
+        @keyframes spinSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .reveal { opacity: 0; }
+        .reveal.visible { animation: fadeInUp 0.7s ease-out forwards; }
+        .reveal-delay-1.visible { animation-delay: 0.1s; }
+        .reveal-delay-2.visible { animation-delay: 0.2s; }
+        .reveal-delay-3.visible { animation-delay: 0.3s; }
+        .reveal-delay-4.visible { animation-delay: 0.4s; }
+
+        /* NAV */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 18px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15,15,26,0.95);
+            backdrop-filter: blur(10px);
+            animation: fadeInDown 0.6s ease-out;
+        }
+        .logo {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s;
+        }
+        .logo:hover { transform: scale(1.05); }
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--main);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #1a1a2e;
+            animation: glowPulse 2s infinite;
+        }
+        .logo span { color: var(--main); }
+        .nav-cta {
+            background: var(--main);
+            color: #1a1a2e;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245,158,11,0.4);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px 40px;
+            background: #1a1a2e url('https://images.pexels.com/photos/2031705/pexels-photo-2031705.jpeg') center/cover no-repeat;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 1;
+            animation: fadeIn 1.5s ease-out;
+        }
+        .hero>* { position: relative; z-index: 2; }
+        .hero-badge {
+            background: rgba(245,158,11,0.2);
+            color: var(--main-light);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(245,158,11,0.3);
+            animation: fadeInDown 0.8s ease-out;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        .hero h1 .main-color { 
+            color: var(--main-light);
+            display: inline-block;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        .hero p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 24px;
+            max-width: 300px;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+        .hero-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+        .hero-contact a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 10px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.12);
+            transition: all 0.3s;
+        }
+        .hero-contact a:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+        .hero-contact a i { color: var(--main-light); }
+        .hero-contact .wa-link { 
+            background: rgba(37,211,102,0.15); 
+            border-color: rgba(37,211,102,0.3);
+        }
+        .hero-contact .wa-link:hover { background: rgba(37,211,102,0.25); }
+        .hero-contact .wa-link i { color: #25D366; }
+
+        .btn-big {
+            display: block;
+            width: 100%;
+            max-width: 320px;
+            padding: 16px;
+            background: var(--main);
+            color: #1a1a2e;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-decoration: none;
+            margin-bottom: 12px;
+            animation: scaleIn 0.8s ease-out 0.8s both;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-big:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(245,158,11,0.4);
+        }
+        .btn-big::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+        .hero-trust {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 8px;
+            animation: fadeInUp 0.8s ease-out 1s both;
+        }
+        .hero-trust i { color: var(--main-light); margin-right: 4px; font-size: 0.6rem; }
+        .scroll-hint {
+            margin-top: 32px;
+            color: rgba(255,255,255,0.35);
+            font-size: 0.7rem;
+            animation: bounce 2s infinite;
+        }
+
+        /* SECTION */
+        section {
+            padding: 60px 18px;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .section-overlay { position: absolute; inset: 0; z-index: 1; }
+        .section-content { position: relative; z-index: 2; }
+        .section-tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--main-light);
+            margin-bottom: 8px;
+            display: block;
+        }
+        .section-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 20px; line-height: 1.15; }
+        .section-title span { color: var(--main-light); }
+
+        /* BOOKING */
+        .booking-section {
+            background: #0d1b2a url('https://images.pexels.com/photos/1004584/pexels-photo-1004584.jpeg') center/cover no-repeat;
+        }
+        .booking-section .section-overlay { background: rgba(0,0,0,0.75); }
+        .quick-prices {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .quick-price-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 14px 8px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: default;
+        }
+        .quick-price-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(245,158,11,0.4);
+        }
+        .price-icon {
+            font-size: 1.5rem;
+            color: var(--main-light);
+            margin-bottom: 4px;
+        }
+        .quick-price-card .pricetag {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--main-light);
+            display: block;
+            margin-top: 2px;
+        }
+        .quick-price-card span { font-size: 0.65rem; opacity: 0.7; }
+
+        .booking-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 22px 16px;
+            transition: all 0.3s;
+        }
+        .booking-card:hover { border-color: rgba(245,158,11,0.3); }
+        .form-group { margin-bottom: 12px; }
+        .form-group label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.7);
+            display: block;
+            margin-bottom: 4px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+        }
+        .form-group input::placeholder { color: rgba(255,255,255,0.3); }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--main);
+            background: rgba(255,255,255,0.12);
+            box-shadow: 0 0 0 3px rgba(245,158,11,0.1);
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: #25D366;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            margin-top: 4px;
+            transition: all 0.3s;
+        }
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37,211,102,0.4);
+        }
+        .btn-submit:active { transform: scale(0.97); }
+
+        /* DRIVER */
+        .driver-section {
+            background: #1a1028 url('https://images.pexels.com/photos/2482189/pexels-photo-2482189.jpeg') center/cover no-repeat;
+            text-align: center;
+        }
+        .driver-section .section-overlay { background: rgba(0,0,0,0.65); }
+        .driver-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            margin: 0 auto 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: rgba(255,255,255,0.3);
+            border: 3px solid rgba(245,158,11,0.3);
+            animation: float 4s ease-in-out infinite;
+            transition: all 0.3s;
+        }
+        .driver-photo:hover {
+            border-color: var(--main);
+            box-shadow: 0 0 30px rgba(245,158,11,0.2);
+        }
+        .driver-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 4px; }
+        .driver-sub { color: var(--main-light); font-size: 0.75rem; margin-bottom: 10px; }
+        .driver-text {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.82rem;
+            line-height: 1.5;
+            max-width: 350px;
+            margin: 0 auto 14px;
+        }
+        .driver-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+        .driver-tag {
+            background: rgba(255,255,255,0.1);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.68rem;
+            color: rgba(255,255,255,0.8);
+            transition: all 0.3s;
+            cursor: default;
+        }
+        .driver-tag:hover {
+            background: rgba(245,158,11,0.2);
+            transform: translateY(-2px);
+        }
+        .driver-tag i { color: var(--main-light); margin-right: 3px; font-size: 0.55rem; }
+
+        /* REVIEWS */
+        .reviews-section {
+            background: #0a1a18 url('https://images.pexels.com/photos/2614818/pexels-photo-2614818.jpeg') center/cover no-repeat;
+        }
+        .reviews-section .section-overlay { background: rgba(0,0,0,0.75); }
+        .review-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 10px;
+            transition: all 0.3s;
+            cursor: default;
+        }
+        .review-card:hover {
+            border-color: rgba(245,158,11,0.3);
+            transform: translateX(4px);
+        }
+        .review-stars { color: var(--main); font-size: 0.7rem; margin-bottom: 6px; }
+        .review-text {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.5;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        .review-author { font-size: 0.7rem; color: rgba(255,255,255,0.5); }
+        .review-author strong { color: rgba(255,255,255,0.8); }
+
+        /* CTA */
+        .cta-strip {
+            background: linear-gradient(135deg, #D97706, #F59E0B);
+            text-align: center;
+            padding: 50px 18px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-strip::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 60%);
+            animation: spinSlow 20s linear infinite;
+        }
+        .cta-strip>* { position: relative; z-index: 1; }
+        .cta-strip h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 6px; color: #1a1a2e; }
+        .cta-strip p { opacity: 0.9; font-size: 0.85rem; margin-bottom: 18px; color: #1a1a2e; }
+        .btn-white {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #1a1a2e;
+            color: var(--main);
+            border-radius: 10px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #060610;
+            text-align: center;
+            padding: 30px 18px;
+            font-size: 0.7rem;
+            color: #555;
+        }
+
+        /* WHATSAPP FLOAT */
+        .wa-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 55px;
+            height: 55px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 26px;
+            box-shadow: 0 6px 25px rgba(37,211,102,0.4);
+            z-index: 900;
+            text-decoration: none;
+            animation: float 3s ease-in-out infinite;
+            transition: all 0.3s;
+        }
+        .wa-float:hover {
+            transform: scale(1.15);
+            box-shadow: 0 10px 35px rgba(37,211,102,0.6);
+        }
+
+        /* POPUP */
+        .popup {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            padding: 20px;
+        }
+        .popup.active { opacity: 1; visibility: visible; }
+        .popup-box {
+            background: #1a1a2e;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            width: 100%;
+            max-width: 340px;
+            transform: scale(0.8);
+            transition: transform 0.4s;
+        }
+        .popup.active .popup-box {
+            transform: scale(1);
+            animation: scaleIn 0.4s ease-out;
+        }
+        .popup-box .success-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(37,211,102,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 1.6rem;
+            color: #25D366;
+        }
+        .popup-box h3 { font-size: 1.2rem; margin-bottom: 6px; }
+        .popup-box p { color: #888; margin-bottom: 18px; font-size: 0.85rem; }
+        .btn-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            background: #25D366;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        .btn-wa:hover { box-shadow: 0 8px 25px rgba(37,211,102,0.4); }
+        .btn-close-popup {
+            display: block;
+            margin: 14px auto 0;
+            background: none;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #888;
+            padding: 8px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+        }
+        .btn-close-popup:hover { border-color: #fff; color: #fff; }
+
+        @media (min-width: 768px) {
+            .hero h1 { font-size: 3.2rem; }
+            .hero p { font-size: 1rem; max-width: 380px; }
+            .section-title { font-size: 2rem; }
+            .booking-card { max-width: 480px; margin: 0 auto; }
+            .driver-text { max-width: 480px; }
+            .quick-prices { max-width: 480px; margin: 0 auto 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">
+            <div class="logo-icon"><i class="fas fa-taxi"></i></div>
+            <div>Khan's<span>Taxi</span></div>
+        </a>
+        <a href="#boek" class="nav-cta">Reserveer Nu</a>
+    </nav>
+
+    <div class="hero" id="home">
+        <div class="hero-badge">Beschikbaar in heel Nederland</div>
+        <h1>Uw Persoonlijke<br><span class="main-color">Taxi Chauffeur</span></h1>
+        <p>Veilig, comfortabel en altijd op tijd. Direct contact met uw vaste chauffeur.</p>
+        
+        <div class="hero-contact">
+            <a href="tel:+31626783621">
+                <i class="fas fa-phone"></i> Bel: +31 6 26783621
+            </a>
+            <a href="https://wa.me/31626783621" target="_blank" class="wa-link">
+                <i class="fab fa-whatsapp"></i> WhatsApp: +31 6 26783621
+            </a>
+        </div>
+
+        <a href="#boek" class="btn-big"><i class="fas fa-calendar-check"></i> Reserveer Nu Uw Rit</a>
+        
+        <div class="hero-trust">
+            <span><i class="fas fa-check-circle"></i> TX-Keurmerk</span>
+            <span><i class="fas fa-star"></i> 4.9 Beoordeling</span>
+            <span><i class="fas fa-shield-alt"></i> Verzekerd</span>
+            <span><i class="fas fa-clock"></i> 24/7</span>
+        </div>
+        <div class="scroll-hint">↓ Scroll naar beneden om te boeken ↓</div>
+    </div>
+
+    <section class="booking-section" id="boek">
+        <div class="section-overlay"></div>
+        <div class="section-content">
+            <span class="section-tag reveal">Snel Boeken</span>
+            <h2 class="section-title reveal reveal-delay-1">Boek Uw <span>Rit</span></h2>
+            
+            <div class="quick-prices">
+                <div class="quick-price-card reveal reveal-delay-1">
+                    <div class="price-icon"><i class="fas fa-city"></i></div>
+                    <span>Stadsrit</span>
+                    <span class="pricetag">€25</span>
+                </div>
+                <div class="quick-price-card reveal reveal-delay-2" style="border-color:rgba(245,158,11,0.4);background:rgba(245,158,11,0.12);">
+                    <div class="price-icon"><i class="fas fa-plane-departure"></i></div>
+                    <span>Schiphol</span>
+                    <span class="pricetag">€45</span>
+                </div>
+                <div class="quick-price-card reveal reveal-delay-3">
+                    <div class="price-icon"><i class="fas fa-road"></i></div>
+                    <span>Lange Afstand</span>
+                    <span class="pricetag">€90</span>
+                </div>
+            </div>
+
+            <div class="booking-card reveal reveal-delay-2">
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label>📍 Ophaallocatie</label>
+                        <input type="text" placeholder="Waar zal ik u ophalen?" required>
+                    </div>
+                    <div class="form-group">
+                        <label>🏁 Bestemming</label>
+                        <input type="text" placeholder="Waar gaat u heen?" required>
+                    </div>
+                    <div class="form-group">
+                        <label>📅 Datum & Tijd</label>
+                        <input type="datetime-local" required id="rideDateTime">
+                    </div>
+                    <div class="form-group">
+                        <label>👤 Uw Naam</label>
+                        <input type="text" placeholder="Volledige naam" required>
+                    </div>
+                    <div class="form-group">
+                        <label>📱 Telefoon (WhatsApp)</label>
+                        <input type="tel" placeholder="+31 6 26783621" required>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <i class="fab fa-whatsapp"></i> Verstuur Boeking via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="driver-section" id="chauffeur">
+        <div class="section-overlay"></div>
+        <div class="section-content">
+            <span class="section-tag reveal">Uw Chauffeur</span>
+            <h2 class="section-title reveal reveal-delay-1">Ontmoet <span>Khan</span></h2>
+            <div class="driver-photo reveal reveal-delay-2"><i class="fas fa-user"></i></div>
+            <div class="reveal reveal-delay-3">
+                <div class="driver-name">Khan</div>
+                <div class="driver-sub">Uw Persoonlijke Chauffeur · 8+ Jaar Ervaring</div>
+                <p class="driver-text">Ik geloof in persoonlijke service. U heeft direct contact met mij — geen app of callcenter. Ik ken de beste routes door heel Nederland en zorg dat u ontspannen en op tijd aankomt.</p>
+            </div>
+            <div class="driver-tags reveal reveal-delay-4">
+                <span class="driver-tag"><i class="fas fa-check"></i> TX-Keurmerk</span>
+                <span class="driver-tag"><i class="fas fa-check"></i> NL / EN / AR</span>
+                <span class="driver-tag"><i class="fas fa-check"></i> Gratis WiFi</span>
+                <span class="driver-tag"><i class="fas fa-check"></i> Rookvrij</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews-section" id="reviews">
+        <div class="section-overlay"></div>
+        <div class="section-content">
+            <span class="section-tag reveal">Reviews</span>
+            <h2 class="section-title reveal reveal-delay-1">Wat <span>Klanten</span> Zeggen</h2>
+            <div class="review-card reveal reveal-delay-1">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Khan stond op Schiphol te wachten met een bordje. Zeer professioneel, hielp met bagage. Beste taxi ervaring!"</p>
+                <div class="review-author"><strong>Sarah J.</strong> · Toerist, VK</div>
+            </div>
+            <div class="review-card reveal reveal-delay-2">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Ik gebruik Khan wekelijks voor zaken. Altijd op tijd, kent alle sluiproutes in Amsterdam. Echt een aanrader!"</p>
+                <div class="review-author"><strong>Mark de V.</strong> · Zakenman</div>
+            </div>
+            <div class="review-card reveal reveal-delay-3">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Wachtte geduldig toen mijn vlucht vertraagd was. Eerlijke prijzen, top service. Dank je wel!"</p>
+                <div class="review-author"><strong>Lisa C.</strong> · Frequente Reiziger</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-strip">
+        <h2 class="reveal">🚖 Klaar om te Vertrekken?</h2>
+        <p class="reveal reveal-delay-1">Boek nu — binnen enkele minuten bevestigd</p>
+        <a href="#boek" class="btn-white reveal reveal-delay-2"><i class="fas fa-calendar-check"></i> Reserveer Uw Rit</a>
+    </div>
+
+    <footer>
+        <p>© 2024 Khan's Taxi · KVK: 12345678 · TX-Keurmerk</p>
+    </footer>
+
+    <a href="https://wa.me/31626783621" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <div class="popup" id="popup">
+        <div class="popup-box">
+            <div class="success-icon"><i class="fas fa-check"></i></div>
+            <h3>Aanvraag Verstuurd!</h3>
+            <p>Ik bevestig uw boeking binnen enkele minuten via WhatsApp.</p>
+            <a href="https://wa.me/31626783621" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> Open WhatsApp</a>
+            <button class="btn-close-popup" onclick="document.getElementById('popup').classList.remove('active')">Sluiten</button>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        const dtInput = document.getElementById('rideDateTime');
+        const now = new Date();
+        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+        dtInput.setAttribute('min', now.toISOString().slice(0,16));
+        dtInput.value = now.toISOString().slice(0,16);
+
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const f = this;
+            const name = f.querySelector('input[placeholder="Volledige naam"]').value;
+            const phone = f.querySelector('input[type="tel"]').value;
+            const pickup = f.querySelector('input[placeholder="Waar zal ik u ophalen?"]').value;
+            const dropoff = f.querySelector('input[placeholder="Waar gaat u heen?"]').value;
+            const datetime = f.querySelector('input[type="datetime-local"]').value;
+            
+            const msg = encodeURIComponent(`🚖 *Nieuwe Rit Aanvraag*%0A%0A👤 ${name}%0A📞 ${phone}%0A📍 ${pickup} → ${dropoff}%0A📅 ${datetime}`);
+            
+            document.querySelector('.popup .btn-wa').href = `https://wa.me/31626783621?text=${msg}`;
+            document.getElementById('popup').classList.add('active');
+            f.reset();
+            dtInput.value = now.toISOString().slice(0,16);
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
