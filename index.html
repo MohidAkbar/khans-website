@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khan's Taxi - Uw Betrouwbare Chauffeur in Nederland</title>
+    <title>Rayan Taxi Arnhem - Uw Betrouwbare Chauffeur in Arnhem</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
@@ -23,6 +23,7 @@
             font-family: 'Inter', sans-serif;
             background: #0f0f1a;
             color: #fff;
+            overflow-x: hidden;
         }
 
         html {
@@ -33,25 +34,9 @@
             from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes scaleIn {
-            from { opacity: 0; transform: scale(0.85); }
-            to { opacity: 1; transform: scale(1); }
-        }
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
         }
         @keyframes shimmer {
             0% { background-position: -200% center; }
@@ -85,7 +70,6 @@
             z-index: 1000;
             background: rgba(15,15,26,0.95);
             backdrop-filter: blur(10px);
-            animation: fadeInDown 0.6s ease-out;
         }
         .logo {
             font-size: 1rem;
@@ -144,7 +128,6 @@
             inset: 0;
             background: rgba(0,0,0,0.7);
             z-index: 1;
-            animation: fadeIn 1.5s ease-out;
         }
         .hero>* { position: relative; z-index: 2; }
         .hero-badge {
@@ -159,34 +142,26 @@
             align-items: center;
             gap: 6px;
             border: 1px solid rgba(245,158,11,0.3);
-            animation: fadeInDown 0.8s ease-out;
         }
         .hero h1 {
             font-size: 2.2rem;
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 10px;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
         }
-        .hero h1 .main-color { 
-            color: var(--main-light);
-            display: inline-block;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-        }
+        .hero h1 .main-color { color: var(--main-light); }
         .hero p {
             color: rgba(255,255,255,0.8);
             font-size: 0.9rem;
             line-height: 1.5;
             margin-bottom: 24px;
             max-width: 300px;
-            animation: fadeInUp 0.8s ease-out 0.5s both;
         }
         .hero-contact {
             display: flex;
             flex-direction: column;
             gap: 8px;
             margin-bottom: 24px;
-            animation: fadeInUp 0.8s ease-out 0.6s both;
         }
         .hero-contact a {
             display: flex;
@@ -226,7 +201,6 @@
             font-size: 1.05rem;
             text-decoration: none;
             margin-bottom: 12px;
-            animation: scaleIn 0.8s ease-out 0.8s both;
             transition: all 0.3s;
             cursor: pointer;
             border: none;
@@ -256,7 +230,6 @@
             font-size: 0.7rem;
             color: rgba(255,255,255,0.7);
             margin-top: 8px;
-            animation: fadeInUp 0.8s ease-out 1s both;
         }
         .hero-trust i { color: var(--main-light); margin-right: 4px; font-size: 0.6rem; }
         .scroll-hint {
@@ -264,6 +237,10 @@
             color: rgba(255,255,255,0.35);
             font-size: 0.7rem;
             animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
         }
 
         /* SECTION */
@@ -307,22 +284,9 @@
             transition: all 0.3s;
             cursor: default;
         }
-        .quick-price-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(245,158,11,0.4);
-        }
-        .price-icon {
-            font-size: 1.5rem;
-            color: var(--main-light);
-            margin-bottom: 4px;
-        }
-        .quick-price-card .pricetag {
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: var(--main-light);
-            display: block;
-            margin-top: 2px;
-        }
+        .quick-price-card:hover { transform: translateY(-4px); border-color: rgba(245,158,11,0.4); }
+        .price-icon { font-size: 1.5rem; color: var(--main-light); margin-bottom: 4px; }
+        .quick-price-card .pricetag { font-size: 1.2rem; font-weight: 800; color: var(--main-light); display: block; margin-top: 2px; }
         .quick-price-card span { font-size: 0.65rem; opacity: 0.7; }
 
         .booking-card {
@@ -343,7 +307,7 @@
             display: block;
             margin-bottom: 4px;
         }
-        .form-group input {
+        .form-group input, .form-group textarea {
             width: 100%;
             padding: 12px;
             background: rgba(255,255,255,0.08);
@@ -353,9 +317,10 @@
             font-size: 0.9rem;
             font-family: 'Inter', sans-serif;
             transition: all 0.3s;
+            resize: vertical;
         }
-        .form-group input::placeholder { color: rgba(255,255,255,0.3); }
-        .form-group input:focus {
+        .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+        .form-group input:focus, .form-group textarea:focus {
             outline: none;
             border-color: var(--main);
             background: rgba(255,255,255,0.12);
@@ -375,10 +340,7 @@
             margin-top: 4px;
             transition: all 0.3s;
         }
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(37,211,102,0.4);
-        }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,211,102,0.4); }
         .btn-submit:active { transform: scale(0.97); }
 
         /* DRIVER */
@@ -402,19 +364,10 @@
             animation: float 4s ease-in-out infinite;
             transition: all 0.3s;
         }
-        .driver-photo:hover {
-            border-color: var(--main);
-            box-shadow: 0 0 30px rgba(245,158,11,0.2);
-        }
+        .driver-photo:hover { border-color: var(--main); box-shadow: 0 0 30px rgba(245,158,11,0.2); }
         .driver-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 4px; }
         .driver-sub { color: var(--main-light); font-size: 0.75rem; margin-bottom: 10px; }
-        .driver-text {
-            color: rgba(255,255,255,0.75);
-            font-size: 0.82rem;
-            line-height: 1.5;
-            max-width: 350px;
-            margin: 0 auto 14px;
-        }
+        .driver-text { color: rgba(255,255,255,0.75); font-size: 0.82rem; line-height: 1.5; max-width: 350px; margin: 0 auto 14px; }
         .driver-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
         .driver-tag {
             background: rgba(255,255,255,0.1);
@@ -425,11 +378,109 @@
             transition: all 0.3s;
             cursor: default;
         }
-        .driver-tag:hover {
-            background: rgba(245,158,11,0.2);
-            transform: translateY(-2px);
-        }
+        .driver-tag:hover { background: rgba(245,158,11,0.2); transform: translateY(-2px); }
         .driver-tag i { color: var(--main-light); margin-right: 3px; font-size: 0.55rem; }
+
+        /* CAR FLEET */
+        .cars-section {
+            background: #0a0a14;
+            text-align: center;
+        }
+        .cars-section .section-overlay { background: rgba(0,0,0,0.3); }
+        .cars-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 800px; margin: 0 auto; }
+        .car-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        .car-card:hover { transform: translateY(-6px); border-color: rgba(245,158,11,0.3); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+        .car-card.featured { border-color: rgba(245,158,11,0.4); background: rgba(245,158,11,0.05); }
+        .car-badge {
+            display: inline-block;
+            background: var(--main);
+            color: #1a1a2e;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            margin: 16px 0 0 16px;
+        }
+        .car-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center 50%;
+            background-repeat: no-repeat;
+        }
+        .car-info { padding: 20px; text-align: left; }
+        .car-info h3 { font-size: 1.1rem; margin-bottom: 4px; color: #fff; }
+        .car-info .car-type { color: var(--main-light); font-size: 0.75rem; margin-bottom: 10px; }
+        .car-features { display: flex; flex-wrap: wrap; gap: 6px; }
+        .car-feature {
+            background: rgba(255,255,255,0.05);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            color: rgba(255,255,255,0.6);
+        }
+        .car-feature i { color: var(--main-light); margin-right: 4px; }
+
+        /* SERVICE AREA */
+        .service-area-section {
+            background: #0d0d18 url('https://images.pexels.com/photos/210182/pexels-photo-210182.jpeg') center/cover no-repeat;
+            text-align: center;
+        }
+        .service-area-section .section-overlay { background: rgba(0,0,0,0.75); }
+        .service-sub { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 30px; }
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            text-align: left;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .location-item {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 8px 12px;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 6px;
+            transition: all 0.25s;
+            display: block;
+        }
+        .location-item:hover {
+            color: var(--main-light);
+            border-color: rgba(245,158,11,0.3);
+            background: rgba(245,158,11,0.05);
+            transform: translateX(4px);
+        }
+
+        /* COMPLAINT */
+        .complaint-section {
+            background: #0a0a14 url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg') center/cover no-repeat;
+            text-align: center;
+        }
+        .complaint-section .section-overlay { background: rgba(0,0,0,0.7); }
+        .complaint-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 25px 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            transition: all 0.3s;
+        }
+        .complaint-box:hover { border-color: rgba(245,158,11,0.2); }
+        .complaint-email { color: var(--main-light); font-size: 0.9rem; margin-top: 15px; }
+        .complaint-email a { color: var(--main-light); text-decoration: none; }
+        .complaint-email a:hover { text-decoration: underline; }
 
         /* REVIEWS */
         .reviews-section {
@@ -445,18 +496,9 @@
             transition: all 0.3s;
             cursor: default;
         }
-        .review-card:hover {
-            border-color: rgba(245,158,11,0.3);
-            transform: translateX(4px);
-        }
+        .review-card:hover { border-color: rgba(245,158,11,0.3); transform: translateX(4px); }
         .review-stars { color: var(--main); font-size: 0.7rem; margin-bottom: 6px; }
-        .review-text {
-            font-size: 0.82rem;
-            color: rgba(255,255,255,0.8);
-            line-height: 1.5;
-            font-style: italic;
-            margin-bottom: 8px;
-        }
+        .review-text { font-size: 0.82rem; color: rgba(255,255,255,0.8); line-height: 1.5; font-style: italic; margin-bottom: 8px; }
         .review-author { font-size: 0.7rem; color: rgba(255,255,255,0.5); }
         .review-author strong { color: rgba(255,255,255,0.8); }
 
@@ -491,18 +533,15 @@
             text-decoration: none;
             transition: all 0.3s;
         }
-        .btn-white:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
+        .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
 
         /* FOOTER */
-        footer {
-            background: #060610;
-            text-align: center;
-            padding: 30px 18px;
-            font-size: 0.7rem;
-            color: #555;
+        footer { 
+            background: #060610; 
+            text-align: center; 
+            padding: 30px 18px; 
+            font-size: 0.7rem; 
+            color: #555; 
         }
 
         /* WHATSAPP FLOAT */
@@ -525,10 +564,7 @@
             animation: float 3s ease-in-out infinite;
             transition: all 0.3s;
         }
-        .wa-float:hover {
-            transform: scale(1.15);
-            box-shadow: 0 10px 35px rgba(37,211,102,0.6);
-        }
+        .wa-float:hover { transform: scale(1.15); box-shadow: 0 10px 35px rgba(37,211,102,0.6); }
 
         /* POPUP */
         .popup {
@@ -556,10 +592,7 @@
             transform: scale(0.8);
             transition: transform 0.4s;
         }
-        .popup.active .popup-box {
-            transform: scale(1);
-            animation: scaleIn 0.4s ease-out;
-        }
+        .popup.active .popup-box { transform: scale(1); }
         .popup-box .success-icon {
             width: 55px;
             height: 55px;
@@ -606,9 +639,15 @@
             .hero h1 { font-size: 3.2rem; }
             .hero p { font-size: 1rem; max-width: 380px; }
             .section-title { font-size: 2rem; }
-            .booking-card { max-width: 480px; margin: 0 auto; }
+            .booking-card, .complaint-box { max-width: 480px; margin: 0 auto; }
             .driver-text { max-width: 480px; }
             .quick-prices { max-width: 480px; margin: 0 auto 16px; }
+            .location-grid { grid-template-columns: repeat(3, 1fr); }
+            .cars-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (min-width: 1024px) {
+            .location-grid { grid-template-columns: repeat(5, 1fr); }
         }
     </style>
 </head>
@@ -617,23 +656,19 @@
     <nav>
         <a href="#" class="logo">
             <div class="logo-icon"><i class="fas fa-taxi"></i></div>
-            <div>Khan's<span>Taxi</span></div>
+            <div>Rayan<span>Taxi</span> Arnhem</div>
         </a>
         <a href="#boek" class="nav-cta">Reserveer Nu</a>
     </nav>
 
     <div class="hero" id="home">
-        <div class="hero-badge">Beschikbaar in heel Nederland</div>
+        <div class="hero-badge">Beschikbaar in Arnhem & Heel Nederland</div>
         <h1>Uw Persoonlijke<br><span class="main-color">Taxi Chauffeur</span></h1>
-        <p>Veilig, comfortabel en altijd op tijd. Direct contact met uw vaste chauffeur.</p>
+        <p>Veilig, comfortabel en altijd op tijd. Direct contact met uw vaste chauffeur in Arnhem.</p>
         
         <div class="hero-contact">
-            <a href="tel:+31626783621">
-                <i class="fas fa-phone"></i> Bel: +31 6 26783621
-            </a>
-            <a href="https://wa.me/31626783621" target="_blank" class="wa-link">
-                <i class="fab fa-whatsapp"></i> WhatsApp: +31 6 26783621
-            </a>
+            <a href="tel:+31642489663"><i class="fas fa-phone"></i> Bel: +31 6 42489663</a>
+            <a href="https://wa.me/31642489663" target="_blank" class="wa-link"><i class="fab fa-whatsapp"></i> WhatsApp: +31 6 42489663</a>
         </div>
 
         <a href="#boek" class="btn-big"><i class="fas fa-calendar-check"></i> Reserveer Nu Uw Rit</a>
@@ -655,47 +690,24 @@
             
             <div class="quick-prices">
                 <div class="quick-price-card reveal reveal-delay-1">
-                    <div class="price-icon"><i class="fas fa-city"></i></div>
-                    <span>Stadsrit</span>
-                    <span class="pricetag">€25</span>
+                    <div class="price-icon"><i class="fas fa-city"></i></div><span>Stadsrit</span><span class="pricetag">€25</span>
                 </div>
                 <div class="quick-price-card reveal reveal-delay-2" style="border-color:rgba(245,158,11,0.4);background:rgba(245,158,11,0.12);">
-                    <div class="price-icon"><i class="fas fa-plane-departure"></i></div>
-                    <span>Schiphol</span>
-                    <span class="pricetag">€45</span>
+                    <div class="price-icon"><i class="fas fa-plane-departure"></i></div><span>Schiphol</span><span class="pricetag">€45</span>
                 </div>
                 <div class="quick-price-card reveal reveal-delay-3">
-                    <div class="price-icon"><i class="fas fa-road"></i></div>
-                    <span>Lange Afstand</span>
-                    <span class="pricetag">€90</span>
+                    <div class="price-icon"><i class="fas fa-road"></i></div><span>Lange Afstand</span><span class="pricetag">€90</span>
                 </div>
             </div>
 
             <div class="booking-card reveal reveal-delay-2">
                 <form id="bookingForm">
-                    <div class="form-group">
-                        <label>📍 Ophaallocatie</label>
-                        <input type="text" placeholder="Waar zal ik u ophalen?" required>
-                    </div>
-                    <div class="form-group">
-                        <label>🏁 Bestemming</label>
-                        <input type="text" placeholder="Waar gaat u heen?" required>
-                    </div>
-                    <div class="form-group">
-                        <label>📅 Datum & Tijd</label>
-                        <input type="datetime-local" required id="rideDateTime">
-                    </div>
-                    <div class="form-group">
-                        <label>👤 Uw Naam</label>
-                        <input type="text" placeholder="Volledige naam" required>
-                    </div>
-                    <div class="form-group">
-                        <label>📱 Telefoon (WhatsApp)</label>
-                        <input type="tel" placeholder="+31 6 26783621" required>
-                    </div>
-                    <button type="submit" class="btn-submit">
-                        <i class="fab fa-whatsapp"></i> Verstuur Boeking via WhatsApp
-                    </button>
+                    <div class="form-group"><label>📍 Ophaallocatie</label><input type="text" placeholder="Waar zal ik u ophalen?" required></div>
+                    <div class="form-group"><label>🏁 Bestemming</label><input type="text" placeholder="Waar gaat u heen?" required></div>
+                    <div class="form-group"><label>📅 Datum & Tijd</label><input type="datetime-local" required id="rideDateTime"></div>
+                    <div class="form-group"><label>👤 Uw Naam</label><input type="text" placeholder="Volledige naam" required></div>
+                    <div class="form-group"><label>📱 Telefoon (WhatsApp)</label><input type="tel" placeholder="+31 6 42489663" required></div>
+                    <button type="submit" class="btn-submit"><i class="fab fa-whatsapp"></i> Verstuur Boeking via WhatsApp</button>
                 </form>
             </div>
         </div>
@@ -705,12 +717,12 @@
         <div class="section-overlay"></div>
         <div class="section-content">
             <span class="section-tag reveal">Uw Chauffeur</span>
-            <h2 class="section-title reveal reveal-delay-1">Ontmoet <span>Khan</span></h2>
+            <h2 class="section-title reveal reveal-delay-1">Ontmoet <span>Rayan</span></h2>
             <div class="driver-photo reveal reveal-delay-2"><i class="fas fa-user"></i></div>
             <div class="reveal reveal-delay-3">
-                <div class="driver-name">Khan</div>
+                <div class="driver-name">Rayan</div>
                 <div class="driver-sub">Uw Persoonlijke Chauffeur · 8+ Jaar Ervaring</div>
-                <p class="driver-text">Ik geloof in persoonlijke service. U heeft direct contact met mij — geen app of callcenter. Ik ken de beste routes door heel Nederland en zorg dat u ontspannen en op tijd aankomt.</p>
+                <p class="driver-text">Ik geloof in persoonlijke service. U heeft direct contact met mij — geen app of callcenter. Ik ken de beste routes door Arnhem en heel Nederland en zorg dat u ontspannen en op tijd aankomt.</p>
             </div>
             <div class="driver-tags reveal reveal-delay-4">
                 <span class="driver-tag"><i class="fas fa-check"></i> TX-Keurmerk</span>
@@ -721,25 +733,111 @@
         </div>
     </section>
 
+    <!-- CAR FLEET -->
+    <section class="cars-section" id="wagens">
+        <div class="section-overlay"></div>
+        <div class="section-content">
+            <span class="section-tag reveal">Onze Vloot</span>
+            <h2 class="section-title reveal reveal-delay-1">Onze <span>Auto's</span></h2>
+            <p class="service-sub reveal reveal-delay-1">Comfortabele en luxe voertuigen voor elke gelegenheid</p>
+            <div class="cars-grid">
+                <div class="car-card featured reveal reveal-delay-1">
+                    <span class="car-badge">⭐ Hoofdauto</span>
+                    <div class="car-image" style="background-image: url('https://images.unsplash.com/photo-1662128364478-e89fd638ad80?w=600'); background-position: center 89%;"></div>
+                    <div class="car-info">
+                        <h3>Volvo V90 Station Car</h3>
+                        <p class="car-type">Luxe & Comfort · Ruime Stationwagen</p>
+                        <div class="car-features">
+                            <span class="car-feature"><i class="fas fa-check"></i> 4 Passagiers</span>
+                            <span class="car-feature"><i class="fas fa-check"></i> Grote Kofferbak</span>
+                            <span class="car-feature"><i class="fas fa-check"></i> Lederen Stoelen</span>
+                            <span class="car-feature"><i class="fas fa-check"></i> Climate Control</span>
+                            <span class="car-feature"><i class="fas fa-check"></i> Gratis WiFi</span>
+                            <span class="car-feature"><i class="fas fa-check"></i> Zeer Ruim</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="car-card reveal reveal-delay-2">
+                    <div class="car-image" style="background-image: url('https://images.pexels.com/photos/17233277/pexels-photo-17233277.jpeg');"></div>
+                    <div class="car-info">
+                        <h3>Mercedes E-Klasse</h3>
+                        <p class="car-type">Business Sedan · Elegant & Stijlvol</p>
+                        <div class="car-features">
+                            <span class="car-feature"><i class="fas fa-check"></i> 4 Passagiers</span>
+                            <span class="car-feature"><i class="fas fa-check"></i> Lederen Interieur</span>
+                            <span class="car-feature"><i class="fas fa-check"></i> Climate Control</span>
+                            <span class="car-feature"><i class="fas fa-check"></i> Privacy Glas</span>
+                            <span class="car-feature"><i class="fas fa-check"></i> Gratis WiFi</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="car-card reveal reveal-delay-3">
+                    <div class="car-image" style="background-image: url('https://images.pexels.com/photos/26957121/pexels-photo-26957121.jpeg');"></div>
+                    <div class="car-info">
+                        <h3>Tesla Model S</h3>
+                        <p class="car-type">100% Elektrisch · Zero Emissie</p>
+                        <div class="car-features">
+                            <span class="car-feature"><i class="fas fa-check"></i> 4 Passagiers</span>
+                            <span class="car-feature"><i class="fas fa-check"></i> Stil & Comfortabel</span>
+                            <span class="car-feature"><i class="fas fa-check"></i> Premium Interieur</span>
+                            <span class="car-feature"><i class="fas fa-check"></i> Groot Bereik</span>
+                            <span class="car-feature"><i class="fas fa-check"></i> Milieuvriendelijk</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-area-section" id="service-area">
+        <div class="section-overlay"></div>
+        <div class="section-content">
+            <span class="section-tag reveal">Service Gebied</span>
+            <h2 class="section-title reveal reveal-delay-1">Waar Ik <span>Rijd</span></h2>
+            <p class="service-sub reveal reveal-delay-1">Professionele taxiservice in Arnhem en omgeving. Vaste prijzen, altijd op tijd.</p>
+            <div class="location-grid reveal reveal-delay-2">
+                <a href="#" class="location-item">TAXI ARNHEM</a><a href="#" class="location-item">TAXI DRIEL</a>
+                <a href="#" class="location-item">TAXI HETEREN</a><a href="#" class="location-item">TAXI HUISSEN</a>
+                <a href="#" class="location-item">TAXI ELST</a><a href="#" class="location-item">TAXI HEELSUM</a>
+                <a href="#" class="location-item">TAXI DOORWERTH</a><a href="#" class="location-item">TAXI RENKUM</a>
+                <a href="#" class="location-item">TAXI WOLFHEZE</a><a href="#" class="location-item">TAXI VLEP</a>
+                <a href="#" class="location-item">TAXI ROZENDAAL</a><a href="#" class="location-item">TAXI RHEDEN</a>
+                <a href="#" class="location-item">TAXI ZEVENAAR</a><a href="#" class="location-item">TAXI DUIVEN</a>
+                <a href="#" class="location-item">TAXI ANIMALS</a><a href="#" class="location-item">TAXI BEMMEL</a>
+                <a href="#" class="location-item">TAXI OOSTERBEEK</a><a href="#" class="location-item">TAXI DOESBURG</a>
+                <a href="#" class="location-item">TAXI LATHUM</a><a href="#" class="location-item">TAXI GENDT</a>
+                <a href="#" class="location-item">TAXI WESTERVOORT</a><a href="#" class="location-item">TAXI ANGEREN</a>
+                <a href="#" class="location-item">TAXI GROESSEN</a><a href="#" class="location-item">TAXI NIJMEGEN</a>
+                <a href="#" class="location-item">TAXI EDE</a>
+            </div>
+        </div>
+    </section>
+
     <section class="reviews-section" id="reviews">
         <div class="section-overlay"></div>
         <div class="section-content">
             <span class="section-tag reveal">Reviews</span>
             <h2 class="section-title reveal reveal-delay-1">Wat <span>Klanten</span> Zeggen</h2>
-            <div class="review-card reveal reveal-delay-1">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Khan stond op Schiphol te wachten met een bordje. Zeer professioneel, hielp met bagage. Beste taxi ervaring!"</p>
-                <div class="review-author"><strong>Sarah J.</strong> · Toerist, VK</div>
-            </div>
-            <div class="review-card reveal reveal-delay-2">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Ik gebruik Khan wekelijks voor zaken. Altijd op tijd, kent alle sluiproutes in Amsterdam. Echt een aanrader!"</p>
-                <div class="review-author"><strong>Mark de V.</strong> · Zakenman</div>
-            </div>
-            <div class="review-card reveal reveal-delay-3">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Wachtte geduldig toen mijn vlucht vertraagd was. Eerlijke prijzen, top service. Dank je wel!"</p>
-                <div class="review-author"><strong>Lisa C.</strong> · Frequente Reiziger</div>
+            <div class="review-card reveal reveal-delay-1"><div class="review-stars">★★★★★</div><p class="review-text">"Rayan stond op Schiphol te wachten met een bordje. Zeer professioneel, hielp met bagage. Beste taxi ervaring!"</p><div class="review-author"><strong>Sarah J.</strong> · Toerist, VK</div></div>
+            <div class="review-card reveal reveal-delay-2"><div class="review-stars">★★★★★</div><p class="review-text">"Ik gebruik Rayan wekelijks voor zaken. Altijd op tijd, kent alle sluiproutes in Arnhem. Echt een aanrader!"</p><div class="review-author"><strong>Mark de V.</strong> · Zakenman</div></div>
+            <div class="review-card reveal reveal-delay-3"><div class="review-stars">★★★★★</div><p class="review-text">"Wachtte geduldig toen mijn vlucht vertraagd was. Eerlijke prijzen, top service. Dank je wel!"</p><div class="review-author"><strong>Lisa C.</strong> · Frequente Reiziger</div></div>
+        </div>
+    </section>
+
+    <section class="complaint-section" id="klacht">
+        <div class="section-overlay"></div>
+        <div class="section-content">
+            <span class="section-tag reveal">Klacht Melden</span>
+            <h2 class="section-title reveal reveal-delay-1">Heeft u een <span>Klacht?</span></h2>
+            <p class="service-sub reveal reveal-delay-1">Wij streven naar de beste service. Als er iets niet naar wens is, laat het ons weten.</p>
+            <div class="complaint-box reveal reveal-delay-2">
+                <form id="complaintForm">
+                    <div class="form-group"><label>👤 Uw Naam</label><input type="text" placeholder="Volledige naam" required></div>
+                    <div class="form-group"><label>📱 Telefoon</label><input type="tel" placeholder="+31 6 42489663"></div>
+                    <div class="form-group"><label>📝 Uw Klacht</label><textarea placeholder="Beschrijf uw klacht..." rows="3" required></textarea></div>
+                    <button type="submit" class="btn-submit" style="background:#DC2626;"><i class="fas fa-exclamation-circle"></i> Klacht Versturen</button>
+                </form>
+                <p class="complaint-email">Of mail direct: <a href="mailto:Pareltaxi@hotmail.com">Pareltaxi@hotmail.com</a></p>
             </div>
         </div>
     </section>
@@ -751,17 +849,27 @@
     </div>
 
     <footer>
-        <p>© 2024 Khan's Taxi · KVK: 12345678 · TX-Keurmerk</p>
+        <div style="max-width: 600px; margin: 0 auto;">
+            <p style="margin-bottom: 6px;">© 2026 Rayan Taxi Arnhem · KVK: 12345678 · TX-Keurmerk · Arnhem</p>
+            <div style="border-top: 1px solid #1a1a1a; padding-top: 12px; margin-top: 12px;">
+                <p style="color: #888; font-size: 0.7rem;">Website by</p>
+                <p style="font-size: 0.8rem; font-weight: 600; color: var(--main-light); margin-bottom: 4px;">Cyber Spark Solutions</p>
+                <p style="font-size: 0.65rem; color: #666;">
+                    <a href="mailto:mohidakabr33@gmail.com" style="color: #888; text-decoration: none;">mohidakabr33@gmail.com</a> · 
+                    <a href="tel:+923092246156" style="color: #888; text-decoration: none;">+92 309 2246156</a>
+                </p>
+            </div>
+        </div>
     </footer>
 
-    <a href="https://wa.me/31626783621" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/31642489663" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <div class="popup" id="popup">
         <div class="popup-box">
             <div class="success-icon"><i class="fas fa-check"></i></div>
-            <h3>Aanvraag Verstuurd!</h3>
-            <p>Ik bevestig uw boeking binnen enkele minuten via WhatsApp.</p>
-            <a href="https://wa.me/31626783621" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> Open WhatsApp</a>
+            <h3 id="popupTitle">Aanvraag Verstuurd!</h3>
+            <p id="popupMsg">Ik bevestig uw boeking binnen enkele minuten via WhatsApp.</p>
+            <a href="https://wa.me/31642489663" class="btn-wa" target="_blank" id="popupWaBtn"><i class="fab fa-whatsapp"></i> Open WhatsApp</a>
             <button class="btn-close-popup" onclick="document.getElementById('popup').classList.remove('active')">Sluiten</button>
         </div>
     </div>
@@ -791,22 +899,34 @@
             const pickup = f.querySelector('input[placeholder="Waar zal ik u ophalen?"]').value;
             const dropoff = f.querySelector('input[placeholder="Waar gaat u heen?"]').value;
             const datetime = f.querySelector('input[type="datetime-local"]').value;
-            
             const msg = encodeURIComponent(`🚖 *Nieuwe Rit Aanvraag*%0A%0A👤 ${name}%0A📞 ${phone}%0A📍 ${pickup} → ${dropoff}%0A📅 ${datetime}`);
-            
-            document.querySelector('.popup .btn-wa').href = `https://wa.me/31626783621?text=${msg}`;
+            document.getElementById('popupWaBtn').href = `https://wa.me/31642489663?text=${msg}`;
+            document.getElementById('popupTitle').textContent = 'Aanvraag Verstuurd!';
+            document.getElementById('popupMsg').textContent = 'Ik bevestig uw boeking binnen enkele minuten via WhatsApp.';
             document.getElementById('popup').classList.add('active');
             f.reset();
             dtInput.value = now.toISOString().slice(0,16);
         });
 
+        document.getElementById('complaintForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const f = this;
+            const name = f.querySelector('input[placeholder="Volledige naam"]').value;
+            const phone = f.querySelector('input[type="tel"]').value;
+            const complaint = f.querySelector('textarea').value;
+            const msg = encodeURIComponent(`⚠️ *Nieuwe Klacht*%0A%0A👤 ${name}%0A📞 ${phone}%0A📝 ${complaint}`);
+            document.getElementById('popupWaBtn').href = `https://wa.me/31642489663?text=${msg}`;
+            document.getElementById('popupTitle').textContent = 'Klacht Verstuurd!';
+            document.getElementById('popupMsg').textContent = 'Wij nemen zo snel mogelijk contact met u op. U kunt ook mailen naar Pareltaxi@hotmail.com';
+            document.getElementById('popup').classList.add('active');
+            f.reset();
+        });
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
-        }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+        }, { threshold: 0.15 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
