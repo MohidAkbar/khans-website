@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TAXI RAYAN ARNHEM - Uw Betrouwbare Chauffeur in Arnhem</title>
+    <title>TAXI RAYAN ARNHEM</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
@@ -95,6 +95,40 @@
             animation: glowPulse 2s infinite;
         }
         .logo span { color: var(--main); font-size: 0.9rem; letter-spacing: 1px; }
+
+        /* LANG SWITCH */
+        .lang-switch {
+            display: flex;
+            gap: 2px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+        .lang-btn {
+            padding: 6px 12px;
+            border: none;
+            background: transparent;
+            color: rgba(255,255,255,0.6);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.7rem;
+            transition: all 0.3s;
+        }
+        .lang-btn.active {
+            background: var(--main);
+            color: #1a1a2e;
+        }
+        .lang-btn:hover:not(.active) {
+            color: #fff;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
         .nav-cta {
             background: var(--main);
             color: #1a1a2e;
@@ -104,6 +138,7 @@
             font-size: 0.8rem;
             text-decoration: none;
             transition: all 0.3s;
+            white-space: nowrap;
         }
         .nav-cta:hover {
             transform: translateY(-2px);
@@ -660,59 +695,65 @@
             <div class="logo-icon"><i class="fas fa-taxi"></i></div>
             <div><span>TAXI RAYAN ARNHEM</span></div>
         </a>
-        <a href="#boek" class="nav-cta">Reserveer Nu</a>
+        <div class="nav-right">
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="nl">NL</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <a href="#boek" class="nav-cta" data-nl="Reserveer Nu" data-en="Book Now">Reserveer Nu</a>
+        </div>
     </nav>
 
     <div class="hero" id="home">
-        <div class="hero-badge">Beschikbaar in Arnhem & Heel Nederland</div>
+        <div class="hero-badge" data-nl="Beschikbaar in Arnhem & Heel Nederland" data-en="Available in Arnhem & All Netherlands">Beschikbaar in Arnhem & Heel Nederland</div>
         <h1><span class="main-color">TAXI RAYAN</span><br>ARNHEM</h1>
-        <p>Veilig, comfortabel en altijd op tijd. Direct contact met uw vaste chauffeur in Arnhem.</p>
+        <p data-nl="Veilig, comfortabel en altijd op tijd. Direct contact met uw vaste chauffeur in Arnhem." data-en="Safe, comfortable and always on time. Direct contact with your dedicated driver in Arnhem.">Veilig, comfortabel en altijd op tijd. Direct contact met uw vaste chauffeur in Arnhem.</p>
         
         <div class="hero-contact">
-            <a href="tel:+31642489663"><i class="fas fa-phone"></i> Bel: +31 6 42489663</a>
+            <a href="tel:+31642489663"><i class="fas fa-phone"></i> <span data-nl="Bel:" data-en="Call:">Bel:</span> +31 6 42489663</a>
             <a href="https://wa.me/31642489663" target="_blank" class="wa-link"><i class="fab fa-whatsapp"></i> WhatsApp: +31 6 42489663</a>
         </div>
 
-        <a href="#boek" class="btn-big"><i class="fas fa-calendar-check"></i> Reserveer Nu Uw Rit</a>
+        <a href="#boek" class="btn-big" data-nl="Reserveer Nu Uw Rit" data-en="Book Your Ride Now"><i class="fas fa-calendar-check"></i> Reserveer Nu Uw Rit</a>
         
         <div class="hero-trust">
-            <span><i class="fas fa-check-circle"></i> TX-Keurmerk</span>
-            <span><i class="fas fa-star"></i> 4.9 Beoordeling</span>
-            <span><i class="fas fa-shield-alt"></i> Verzekerd</span>
+            <span><i class="fas fa-check-circle"></i> <span data-nl="TX-Keurmerk" data-en="TX-Certified">TX-Keurmerk</span></span>
+            <span><i class="fas fa-star"></i> <span data-nl="4.9 Beoordeling" data-en="4.9 Rating">4.9 Beoordeling</span></span>
+            <span><i class="fas fa-shield-alt"></i> <span data-nl="Verzekerd" data-en="Insured">Verzekerd</span></span>
             <span><i class="fas fa-clock"></i> 24/7</span>
         </div>
-        <div class="scroll-hint">↓ Scroll naar beneden om te boeken ↓</div>
+        <div class="scroll-hint" data-nl="↓ Scroll naar beneden om te boeken ↓" data-en="↓ Scroll down to book ↓">↓ Scroll naar beneden om te boeken ↓</div>
     </div>
 
     <section class="booking-section" id="boek">
         <div class="section-overlay"></div>
         <div class="section-content">
-            <span class="section-tag reveal">Snel Boeken</span>
-            <h2 class="section-title reveal reveal-delay-1">Boek Uw <span>Rit</span></h2>
+            <span class="section-tag reveal" data-nl="Snel Boeken" data-en="Quick Booking">Snel Boeken</span>
+            <h2 class="section-title reveal reveal-delay-1"><span data-nl="Boek Uw" data-en="Book Your">Boek Uw</span> <span>Rit</span></h2>
             
             <div class="quick-prices">
                 <div class="quick-price-card reveal reveal-delay-1">
                     <div class="price-icon"><i class="fas fa-city"></i></div>
-                    <span>Stadsrit</span>
+                    <span data-nl="Stadsrit" data-en="City Ride">Stadsrit</span>
                 </div>
                 <div class="quick-price-card reveal reveal-delay-2" style="border-color:rgba(245,158,11,0.4);background:rgba(245,158,11,0.12);">
                     <div class="price-icon"><i class="fas fa-plane-departure"></i></div>
-                    <span>Schiphol</span>
+                    <span data-nl="Schiphol" data-en="Schiphol">Schiphol</span>
                 </div>
                 <div class="quick-price-card reveal reveal-delay-3">
                     <div class="price-icon"><i class="fas fa-road"></i></div>
-                    <span>Lange Afstand</span>
+                    <span data-nl="Lange Afstand" data-en="Long Distance">Lange Afstand</span>
                 </div>
             </div>
 
             <div class="booking-card reveal reveal-delay-2">
                 <form id="bookingForm">
-                    <div class="form-group"><label>📍 Ophaallocatie</label><input type="text" placeholder="Waar zal ik u ophalen?" required></div>
-                    <div class="form-group"><label>🏁 Bestemming</label><input type="text" placeholder="Waar gaat u heen?" required></div>
-                    <div class="form-group"><label>📅 Datum & Tijd</label><input type="datetime-local" required id="rideDateTime"></div>
-                    <div class="form-group"><label>👤 Uw Naam</label><input type="text" placeholder="Volledige naam" required></div>
-                    <div class="form-group"><label>📱 Telefoon (WhatsApp)</label><input type="tel" placeholder="+31 6 42489663" required></div>
-                    <button type="submit" class="btn-submit"><i class="fab fa-whatsapp"></i> Verstuur Boeking via WhatsApp</button>
+                    <div class="form-group"><label data-nl="📍 Ophaallocatie" data-en="📍 Pickup Location">📍 Ophaallocatie</label><input type="text" data-nl-placeholder="Waar zal ik u ophalen?" data-en-placeholder="Where should I pick you up?" placeholder="Waar zal ik u ophalen?" required></div>
+                    <div class="form-group"><label data-nl="🏁 Bestemming" data-en="🏁 Destination">🏁 Bestemming</label><input type="text" data-nl-placeholder="Waar gaat u heen?" data-en-placeholder="Where are you going?" placeholder="Waar gaat u heen?" required></div>
+                    <div class="form-group"><label data-nl="📅 Datum & Tijd" data-en="📅 Date & Time">📅 Datum & Tijd</label><input type="datetime-local" required id="rideDateTime"></div>
+                    <div class="form-group"><label data-nl="👤 Uw Naam" data-en="👤 Your Name">👤 Uw Naam</label><input type="text" data-nl-placeholder="Volledige naam" data-en-placeholder="Full name" placeholder="Volledige naam" required></div>
+                    <div class="form-group"><label data-nl="📱 Telefoon (WhatsApp)" data-en="📱 Phone (WhatsApp)">📱 Telefoon (WhatsApp)</label><input type="tel" placeholder="+31 6 42489663" required></div>
+                    <button type="submit" class="btn-submit" data-nl="Verstuur Boeking via WhatsApp" data-en="Send Booking via WhatsApp"><i class="fab fa-whatsapp"></i> Verstuur Boeking via WhatsApp</button>
                 </form>
             </div>
         </div>
@@ -721,18 +762,18 @@
     <section class="driver-section" id="chauffeur">
         <div class="section-overlay"></div>
         <div class="section-content">
-            <span class="section-tag reveal">Uw Chauffeur</span>
-            <h2 class="section-title reveal reveal-delay-1">Uw <span>Chauffeur</span></h2>
+            <span class="section-tag reveal" data-nl="Uw Chauffeur" data-en="Your Driver">Uw Chauffeur</span>
+            <h2 class="section-title reveal reveal-delay-1"><span data-nl="Uw" data-en="Your">Uw</span> <span data-nl="Chauffeur" data-en="Driver">Chauffeur</span></h2>
             <div class="driver-photo reveal reveal-delay-2"><i class="fas fa-user"></i></div>
             <div class="reveal reveal-delay-3">
-                <div class="driver-name">Chauffeur</div>
-                <div class="driver-sub">Uw Persoonlijke Chauffeur · 8+ Jaar Ervaring</div>
-                <p class="driver-text">Ik geloof in persoonlijke service. U heeft direct contact met mij — geen app of callcenter. Ik ken de beste routes door Arnhem en heel Nederland en zorg dat u ontspannen en op tijd aankomt.</p>
+                <div class="driver-name" data-nl="Chauffeur" data-en="Driver">Chauffeur</div>
+                <div class="driver-sub" data-nl="Uw Persoonlijke Chauffeur · 8+ Jaar Ervaring" data-en="Your Personal Driver · 8+ Years Experience">Uw Persoonlijke Chauffeur · 8+ Jaar Ervaring</div>
+                <p class="driver-text" data-nl="Ik geloof in persoonlijke service. U heeft direct contact met mij — geen app of callcenter. Ik ken de beste routes door Arnhem en heel Nederland en zorg dat u ontspannen en op tijd aankomt." data-en="I believe in personal service. You have direct contact with me — no app or call center. I know the best routes through Arnhem and all of the Netherlands and ensure you arrive relaxed and on time.">Ik geloof in persoonlijke service. U heeft direct contact met mij — geen app of callcenter. Ik ken de beste routes door Arnhem en heel Nederland en zorg dat u ontspannen en op tijd aankomt.</p>
             </div>
             <div class="driver-tags reveal reveal-delay-4">
-                <span class="driver-tag"><i class="fas fa-check"></i> TX-Keurmerk</span>
+                <span class="driver-tag"><i class="fas fa-check"></i> <span data-nl="TX-Keurmerk" data-en="TX-Certified">TX-Keurmerk</span></span>
                 <span class="driver-tag"><i class="fas fa-check"></i> NL / EN / AR</span>
-                <span class="driver-tag"><i class="fas fa-check"></i> Rookvrij</span>
+                <span class="driver-tag"><i class="fas fa-check"></i> <span data-nl="Rookvrij" data-en="Smoke-free">Rookvrij</span></span>
             </div>
         </div>
     </section>
@@ -741,20 +782,20 @@
     <section class="cars-section" id="wagens">
         <div class="section-overlay"></div>
         <div class="section-content">
-            <span class="section-tag reveal">Onze Vloot</span>
-            <h2 class="section-title reveal reveal-delay-1">Onze <span>Auto's</span></h2>
-            <p class="service-sub reveal reveal-delay-1">Comfortabele en luxe voertuigen voor elke gelegenheid</p>
+            <span class="section-tag reveal" data-nl="Onze Vloot" data-en="Our Fleet">Onze Vloot</span>
+            <h2 class="section-title reveal reveal-delay-1"><span data-nl="Onze" data-en="Our">Onze</span> <span data-nl="Auto's" data-en="Cars">Auto's</span></h2>
+            <p class="service-sub reveal reveal-delay-1" data-nl="Comfortabele en luxe voertuigen voor elke gelegenheid" data-en="Comfortable and luxury vehicles for every occasion">Comfortabele en luxe voertuigen voor elke gelegenheid</p>
             <div class="cars-grid">
                 <div class="car-card featured reveal reveal-delay-1">
-                    <span class="car-badge">⭐ Hoofdauto</span>
+                    <span class="car-badge" data-nl="⭐ Hoofdauto" data-en="⭐ Main Car">⭐ Hoofdauto</span>
                     <div class="car-image" style="background-image: url('https://images.unsplash.com/photo-1662128364478-e89fd638ad80?w=600'); background-position: center 89%;"></div>
                     <div class="car-info">
                         <h3>Volvo V90 Station Car</h3>
-                        <p class="car-type">Luxe & Comfort · Ruime Stationwagen</p>
+                        <p class="car-type" data-nl="Luxe & Comfort · Ruime Stationwagen" data-en="Luxury & Comfort · Spacious Station Wagon">Luxe & Comfort · Ruime Stationwagen</p>
                         <div class="car-features">
-                            <span class="car-feature"><i class="fas fa-check"></i> 4 Passagiers</span>
-                            <span class="car-feature"><i class="fas fa-check"></i> Grote Kofferbak</span>
-                            <span class="car-feature"><i class="fas fa-check"></i> Lederen Stoelen</span>
+                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="4 Passagiers" data-en="4 Passengers">4 Passagiers</span></span>
+                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Grote Kofferbak" data-en="Large Trunk">Grote Kofferbak</span></span>
+                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Lederen Stoelen" data-en="Leather Seats">Lederen Stoelen</span></span>
                             <span class="car-feature"><i class="fas fa-check"></i> Climate Control</span>
                         </div>
                     </div>
@@ -763,12 +804,12 @@
                     <div class="car-image" style="background-image: url('https://images.pexels.com/photos/17233277/pexels-photo-17233277.jpeg');"></div>
                     <div class="car-info">
                         <h3>Mercedes E-Klasse</h3>
-                        <p class="car-type">Business Sedan · Elegant & Stijlvol</p>
+                        <p class="car-type" data-nl="Business Sedan · Elegant & Stijlvol" data-en="Business Sedan · Elegant & Stylish">Business Sedan · Elegant & Stijlvol</p>
                         <div class="car-features">
-                            <span class="car-feature"><i class="fas fa-check"></i> 4 Passagiers</span>
-                            <span class="car-feature"><i class="fas fa-check"></i> Lederen Interieur</span>
+                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="4 Passagiers" data-en="4 Passengers">4 Passagiers</span></span>
+                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Lederen Interieur" data-en="Leather Interior">Lederen Interieur</span></span>
                             <span class="car-feature"><i class="fas fa-check"></i> Climate Control</span>
-                            <span class="car-feature"><i class="fas fa-check"></i> Privacy Glas</span>
+                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Privacy Glas" data-en="Privacy Glass">Privacy Glas</span></span>
                         </div>
                     </div>
                 </div>
@@ -776,12 +817,12 @@
                     <div class="car-image" style="background-image: url('https://images.pexels.com/photos/26957121/pexels-photo-26957121.jpeg');"></div>
                     <div class="car-info">
                         <h3>Tesla Model S</h3>
-                        <p class="car-type">100% Elektrisch · Zero Emissie</p>
+                        <p class="car-type" data-nl="100% Elektrisch · Zero Emissie" data-en="100% Electric · Zero Emission">100% Elektrisch · Zero Emissie</p>
                         <div class="car-features">
-                            <span class="car-feature"><i class="fas fa-check"></i> 4 Passagiers</span>
-                            <span class="car-feature"><i class="fas fa-check"></i> Stil & Comfortabel</span>
-                            <span class="car-feature"><i class="fas fa-check"></i> Premium Interieur</span>
-                            <span class="car-feature"><i class="fas fa-check"></i> Groot Bereik</span>
+                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="4 Passagiers" data-en="4 Passengers">4 Passagiers</span></span>
+                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Stil & Comfortabel" data-en="Quiet & Comfortable">Stil & Comfortabel</span></span>
+                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Premium Interieur" data-en="Premium Interior">Premium Interieur</span></span>
+                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Groot Bereik" data-en="Long Range">Groot Bereik</span></span>
                         </div>
                     </div>
                 </div>
@@ -792,9 +833,9 @@
     <section class="service-area-section" id="service-area">
         <div class="section-overlay"></div>
         <div class="section-content">
-            <span class="section-tag reveal">Service Gebied</span>
-            <h2 class="section-title reveal reveal-delay-1">Waar Ik <span>Rijd</span></h2>
-            <p class="service-sub reveal reveal-delay-1">Professionele taxiservice in Arnhem en omgeving. Vaste prijzen, altijd op tijd.</p>
+            <span class="section-tag reveal" data-nl="Service Gebied" data-en="Service Area">Service Gebied</span>
+            <h2 class="section-title reveal reveal-delay-1"><span data-nl="Waar Ik" data-en="Where I">Waar Ik</span> <span data-nl="Rijd" data-en="Drive">Rijd</span></h2>
+            <p class="service-sub reveal reveal-delay-1" data-nl="Professionele taxiservice in Arnhem en omgeving. Vaste prijzen, altijd op tijd." data-en="Professional taxi service in Arnhem and surroundings. Fixed prices, always on time.">Professionele taxiservice in Arnhem en omgeving. Vaste prijzen, altijd op tijd.</p>
             <div class="location-grid reveal reveal-delay-2">
                 <a href="#" class="location-item">TAXI ARNHEM</a><a href="#" class="location-item">TAXI DRIEL</a>
                 <a href="#" class="location-item">TAXI HETEREN</a><a href="#" class="location-item">TAXI HUISSEN</a>
@@ -816,43 +857,43 @@
     <section class="reviews-section" id="reviews">
         <div class="section-overlay"></div>
         <div class="section-content">
-            <span class="section-tag reveal">Reviews</span>
-            <h2 class="section-title reveal reveal-delay-1">Wat <span>Klanten</span> Zeggen</h2>
-            <div class="review-card reveal reveal-delay-1"><div class="review-stars">★★★★★</div><p class="review-text">"Stond op Schiphol te wachten met een bordje. Zeer professioneel, hielp met bagage. Beste taxi ervaring!"</p><div class="review-author"><strong>Sarah J.</strong> · Toerist, VK</div></div>
-            <div class="review-card reveal reveal-delay-2"><div class="review-stars">★★★★★</div><p class="review-text">"Ik gebruik deze taxi wekelijks voor zaken. Altijd op tijd, kent alle sluiproutes in Arnhem. Echt een aanrader!"</p><div class="review-author"><strong>Mark de V.</strong> · Zakenman</div></div>
-            <div class="review-card reveal reveal-delay-3"><div class="review-stars">★★★★★</div><p class="review-text">"Wachtte geduldig toen mijn vlucht vertraagd was. Eerlijke prijzen, top service. Dank je wel!"</p><div class="review-author"><strong>Lisa C.</strong> · Frequente Reiziger</div></div>
+            <span class="section-tag reveal" data-nl="Reviews" data-en="Reviews">Reviews</span>
+            <h2 class="section-title reveal reveal-delay-1"><span data-nl="Wat" data-en="What">Wat</span> <span data-nl="Klanten" data-en="Customers">Klanten</span> <span data-nl="Zeggen" data-en="Say">Zeggen</span></h2>
+            <div class="review-card reveal reveal-delay-1"><div class="review-stars">★★★★★</div><p class="review-text" data-nl="Stond op Schiphol te wachten met een bordje. Zeer professioneel, hielp met bagage. Beste taxi ervaring!" data-en="Was waiting at Schiphol with a sign. Very professional, helped with luggage. Best taxi experience!">Stond op Schiphol te wachten met een bordje. Zeer professioneel, hielp met bagage. Beste taxi ervaring!</p><div class="review-author"><strong>Sarah J.</strong> · <span data-nl="Toerist, VK" data-en="Tourist, UK">Toerist, VK</span></div></div>
+            <div class="review-card reveal reveal-delay-2"><div class="review-stars">★★★★★</div><p class="review-text" data-nl="Ik gebruik deze taxi wekelijks voor zaken. Altijd op tijd, kent alle sluiproutes in Arnhem. Echt een aanrader!" data-en="I use this taxi weekly for business. Always on time, knows all the shortcuts in Arnhem. Highly recommended!">Ik gebruik deze taxi wekelijks voor zaken. Altijd op tijd, kent alle sluiproutes in Arnhem. Echt een aanrader!</p><div class="review-author"><strong>Mark de V.</strong> · <span data-nl="Zakenman" data-en="Businessman">Zakenman</span></div></div>
+            <div class="review-card reveal reveal-delay-3"><div class="review-stars">★★★★★</div><p class="review-text" data-nl="Wachtte geduldig toen mijn vlucht vertraagd was. Eerlijke prijzen, top service. Dank je wel!" data-en="Waited patiently when my flight was delayed. Fair prices, top service. Thank you!">Wachtte geduldig toen mijn vlucht vertraagd was. Eerlijke prijzen, top service. Dank je wel!</p><div class="review-author"><strong>Lisa C.</strong> · <span data-nl="Frequente Reiziger" data-en="Frequent Traveler">Frequente Reiziger</span></div></div>
         </div>
     </section>
 
     <section class="complaint-section" id="klacht">
         <div class="section-overlay"></div>
         <div class="section-content">
-            <span class="section-tag reveal">Klacht Melden</span>
-            <h2 class="section-title reveal reveal-delay-1">Heeft u een <span>Klacht?</span></h2>
-            <p class="service-sub reveal reveal-delay-1">Wij streven naar de beste service. Als er iets niet naar wens is, laat het ons weten.</p>
+            <span class="section-tag reveal" data-nl="Klacht Melden" data-en="Report Complaint">Klacht Melden</span>
+            <h2 class="section-title reveal reveal-delay-1"><span data-nl="Heeft u een" data-en="Do you have a">Heeft u een</span> <span data-nl="Klacht?" data-en="Complaint?">Klacht?</span></h2>
+            <p class="service-sub reveal reveal-delay-1" data-nl="Wij streven naar de beste service. Als er iets niet naar wens is, laat het ons weten." data-en="We strive for the best service. If something is not to your satisfaction, let us know.">Wij streven naar de beste service. Als er iets niet naar wens is, laat het ons weten.</p>
             <div class="complaint-box reveal reveal-delay-2">
                 <form id="complaintForm">
-                    <div class="form-group"><label>👤 Uw Naam</label><input type="text" placeholder="Volledige naam" required></div>
-                    <div class="form-group"><label>📱 Telefoon</label><input type="tel" placeholder="+31 6 42489663"></div>
-                    <div class="form-group"><label>📝 Uw Klacht</label><textarea placeholder="Beschrijf uw klacht..." rows="3" required></textarea></div>
-                    <button type="submit" class="btn-submit" style="background:#DC2626;"><i class="fas fa-exclamation-circle"></i> Klacht Versturen</button>
+                    <div class="form-group"><label data-nl="👤 Uw Naam" data-en="👤 Your Name">👤 Uw Naam</label><input type="text" data-nl-placeholder="Volledige naam" data-en-placeholder="Full name" placeholder="Volledige naam" required></div>
+                    <div class="form-group"><label data-nl="📱 Telefoon" data-en="📱 Phone">📱 Telefoon</label><input type="tel" placeholder="+31 6 42489663"></div>
+                    <div class="form-group"><label data-nl="📝 Uw Klacht" data-en="📝 Your Complaint">📝 Uw Klacht</label><textarea data-nl-placeholder="Beschrijf uw klacht..." data-en-placeholder="Describe your complaint..." placeholder="Beschrijf uw klacht..." rows="3" required></textarea></div>
+                    <button type="submit" class="btn-submit" style="background:#DC2626;" data-nl="Klacht Versturen" data-en="Send Complaint"><i class="fas fa-exclamation-circle"></i> Klacht Versturen</button>
                 </form>
-                <p class="complaint-email">Of mail direct: <a href="mailto:Pareltaxi@hotmail.com">Pareltaxi@hotmail.com</a></p>
+                <p class="complaint-email"><span data-nl="Of mail direct:" data-en="Or email directly:">Of mail direct:</span> <a href="mailto:Pareltaxi@hotmail.com">Pareltaxi@hotmail.com</a></p>
             </div>
         </div>
     </section>
 
     <div class="cta-strip">
-        <h2 class="reveal">🚖 Klaar om te Vertrekken?</h2>
-        <p class="reveal reveal-delay-1">Boek nu — binnen enkele minuten bevestigd</p>
-        <a href="#boek" class="btn-white reveal reveal-delay-2"><i class="fas fa-calendar-check"></i> Reserveer Uw Rit</a>
+        <h2 class="reveal" data-nl="🚖 Klaar om te Vertrekken?" data-en="🚖 Ready to Go?">🚖 Klaar om te Vertrekken?</h2>
+        <p class="reveal reveal-delay-1" data-nl="Boek nu — binnen enkele minuten bevestigd" data-en="Book now — confirmed within minutes">Boek nu — binnen enkele minuten bevestigd</p>
+        <a href="#boek" class="btn-white reveal reveal-delay-2" data-nl="Reserveer Uw Rit" data-en="Book Your Ride"><i class="fas fa-calendar-check"></i> Reserveer Uw Rit</a>
     </div>
 
     <footer>
         <div style="max-width: 600px; margin: 0 auto;">
             <p style="margin-bottom: 6px;">© 2026 TAXI RAYAN ARNHEM · KVK: 12345678 · TX-Keurmerk · Arnhem</p>
             <div style="border-top: 1px solid #1a1a1a; padding-top: 12px; margin-top: 12px;">
-                <p style="color: #888; font-size: 0.7rem;">Website by</p>
+                <p style="color: #888; font-size: 0.7rem;" data-nl="Website door" data-en="Website by">Website door</p>
                 <p style="font-size: 0.8rem; font-weight: 600; color: var(--main-light); margin-bottom: 4px;">Cyber Spark Solutions</p>
                 <p style="font-size: 0.65rem; color: #666;">
                     <a href="mailto:mohidakabr33@gmail.com" style="color: #888; text-decoration: none;">mohidakabr33@gmail.com</a> · 
@@ -867,14 +908,46 @@
     <div class="popup" id="popup">
         <div class="popup-box">
             <div class="success-icon"><i class="fas fa-check"></i></div>
-            <h3 id="popupTitle">Aanvraag Verstuurd!</h3>
-            <p id="popupMsg">Ik bevestig uw boeking binnen enkele minuten via WhatsApp.</p>
-            <a href="https://wa.me/31642489663" class="btn-wa" target="_blank" id="popupWaBtn"><i class="fab fa-whatsapp"></i> Open WhatsApp</a>
-            <button class="btn-close-popup" onclick="document.getElementById('popup').classList.remove('active')">Sluiten</button>
+            <h3 id="popupTitle" data-nl="Aanvraag Verstuurd!" data-en="Request Sent!">Aanvraag Verstuurd!</h3>
+            <p id="popupMsg" data-nl="Ik bevestig uw boeking binnen enkele minuten via WhatsApp." data-en="I will confirm your booking within a few minutes via WhatsApp.">Ik bevestig uw boeking binnen enkele minuten via WhatsApp.</p>
+            <a href="https://wa.me/31642489663" class="btn-wa" target="_blank" id="popupWaBtn"><i class="fab fa-whatsapp"></i> <span data-nl="Open WhatsApp" data-en="Open WhatsApp">Open WhatsApp</span></a>
+            <button class="btn-close-popup" onclick="document.getElementById('popup').classList.remove('active')" data-nl="Sluiten" data-en="Close">Sluiten</button>
         </div>
     </div>
 
     <script>
+        // Language switcher
+        let currentLang = 'nl';
+        
+        function switchLang(lang) {
+            currentLang = lang;
+            
+            // Update lang buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+            
+            // Update all elements with data-nl and data-en
+            document.querySelectorAll('[data-nl][data-en]').forEach(el => {
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    const placeholder = el.getAttribute(`data-${lang}-placeholder`);
+                    if (placeholder) el.placeholder = placeholder;
+                } else {
+                    el.textContent = el.getAttribute(`data-${lang}`);
+                }
+            });
+            
+            // Update form placeholders
+            document.querySelectorAll('[data-nl-placeholder][data-en-placeholder]').forEach(el => {
+                el.placeholder = el.getAttribute(`data-${lang}-placeholder`);
+            });
+        }
+        
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => switchLang(btn.dataset.lang));
+        });
+
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -894,15 +967,13 @@
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const f = this;
-            const name = f.querySelector('input[placeholder="Volledige naam"]').value;
+            const name = f.querySelector('input[placeholder="Volledige naam"], input[placeholder="Full name"]').value;
             const phone = f.querySelector('input[type="tel"]').value;
-            const pickup = f.querySelector('input[placeholder="Waar zal ik u ophalen?"]').value;
-            const dropoff = f.querySelector('input[placeholder="Waar gaat u heen?"]').value;
+            const pickup = f.querySelectorAll('input[type="text"]')[0].value;
+            const dropoff = f.querySelectorAll('input[type="text"]')[1].value;
             const datetime = f.querySelector('input[type="datetime-local"]').value;
-            const msg = encodeURIComponent(`🚖 *Nieuwe Rit Aanvraag*%0A%0A👤 ${name}%0A📞 ${phone}%0A📍 ${pickup} → ${dropoff}%0A📅 ${datetime}`);
+            const msg = encodeURIComponent(`🚖 *${currentLang === 'nl' ? 'Nieuwe Rit Aanvraag' : 'New Ride Request'}*%0A%0A👤 ${name}%0A📞 ${phone}%0A📍 ${pickup} → ${dropoff}%0A📅 ${datetime}`);
             document.getElementById('popupWaBtn').href = `https://wa.me/31642489663?text=${msg}`;
-            document.getElementById('popupTitle').textContent = 'Aanvraag Verstuurd!';
-            document.getElementById('popupMsg').textContent = 'Ik bevestig uw boeking binnen enkele minuten via WhatsApp.';
             document.getElementById('popup').classList.add('active');
             f.reset();
             dtInput.value = now.toISOString().slice(0,16);
@@ -911,13 +982,11 @@
         document.getElementById('complaintForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const f = this;
-            const name = f.querySelector('input[placeholder="Volledige naam"]').value;
+            const name = f.querySelector('input[type="text"]').value;
             const phone = f.querySelector('input[type="tel"]').value;
             const complaint = f.querySelector('textarea').value;
-            const msg = encodeURIComponent(`⚠️ *Nieuwe Klacht*%0A%0A👤 ${name}%0A📞 ${phone}%0A📝 ${complaint}`);
+            const msg = encodeURIComponent(`⚠️ *${currentLang === 'nl' ? 'Nieuwe Klacht' : 'New Complaint'}*%0A%0A👤 ${name}%0A📞 ${phone}%0A📝 ${complaint}`);
             document.getElementById('popupWaBtn').href = `https://wa.me/31642489663?text=${msg}`;
-            document.getElementById('popupTitle').textContent = 'Klacht Verstuurd!';
-            document.getElementById('popupMsg').textContent = 'Wij nemen zo snel mogelijk contact met u op. U kunt ook mailen naar Pareltaxi@hotmail.com';
             document.getElementById('popup').classList.add('active');
             f.reset();
         });
