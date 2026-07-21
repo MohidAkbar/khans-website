@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rayan Taxi Arnhem - Uw Betrouwbare Chauffeur in Arnhem</title>
+    <title>TAXI RAYAN ARNHEM - Uw Betrouwbare Chauffeur in Arnhem</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
@@ -94,7 +94,7 @@
             color: #1a1a2e;
             animation: glowPulse 2s infinite;
         }
-        .logo span { color: var(--main); }
+        .logo span { color: var(--main); font-size: 0.9rem; letter-spacing: 1px; }
         .nav-cta {
             background: var(--main);
             color: #1a1a2e;
@@ -148,6 +148,7 @@
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 10px;
+            letter-spacing: 2px;
         }
         .hero h1 .main-color { color: var(--main-light); }
         .hero p {
@@ -272,22 +273,24 @@
         .quick-prices {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-bottom: 16px;
+            gap: 12px;
+            margin-bottom: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .quick-price-card {
             background: rgba(255,255,255,0.08);
             border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 14px 8px;
+            border-radius: 16px;
+            padding: 25px 10px;
             text-align: center;
             transition: all 0.3s;
             cursor: default;
         }
         .quick-price-card:hover { transform: translateY(-4px); border-color: rgba(245,158,11,0.4); }
-        .price-icon { font-size: 1.5rem; color: var(--main-light); margin-bottom: 4px; }
-        .quick-price-card .pricetag { font-size: 1.2rem; font-weight: 800; color: var(--main-light); display: block; margin-top: 2px; }
-        .quick-price-card span { font-size: 0.65rem; opacity: 0.7; }
+        .price-icon { font-size: 2rem; color: var(--main-light); margin-bottom: 6px; }
+        .quick-price-card span { font-size: 0.7rem; opacity: 0.8; }
 
         .booking-card {
             background: rgba(255,255,255,0.08);
@@ -636,12 +639,11 @@
         .btn-close-popup:hover { border-color: #fff; color: #fff; }
 
         @media (min-width: 768px) {
-            .hero h1 { font-size: 3.2rem; }
+            .hero h1 { font-size: 3.5rem; }
             .hero p { font-size: 1rem; max-width: 380px; }
             .section-title { font-size: 2rem; }
             .booking-card, .complaint-box { max-width: 480px; margin: 0 auto; }
             .driver-text { max-width: 480px; }
-            .quick-prices { max-width: 480px; margin: 0 auto 16px; }
             .location-grid { grid-template-columns: repeat(3, 1fr); }
             .cars-grid { grid-template-columns: repeat(3, 1fr); }
         }
@@ -656,14 +658,14 @@
     <nav>
         <a href="#" class="logo">
             <div class="logo-icon"><i class="fas fa-taxi"></i></div>
-            <div>Rayan<span>Taxi</span> Arnhem</div>
+            <div><span>TAXI RAYAN ARNHEM</span></div>
         </a>
         <a href="#boek" class="nav-cta">Reserveer Nu</a>
     </nav>
 
     <div class="hero" id="home">
         <div class="hero-badge">Beschikbaar in Arnhem & Heel Nederland</div>
-        <h1>Uw Persoonlijke<br><span class="main-color">Taxi Chauffeur</span></h1>
+        <h1><span class="main-color">TAXI RAYAN</span><br>ARNHEM</h1>
         <p>Veilig, comfortabel en altijd op tijd. Direct contact met uw vaste chauffeur in Arnhem.</p>
         
         <div class="hero-contact">
@@ -690,13 +692,16 @@
             
             <div class="quick-prices">
                 <div class="quick-price-card reveal reveal-delay-1">
-                    <div class="price-icon"><i class="fas fa-city"></i></div><span>Stadsrit</span><span class="pricetag">€25</span>
+                    <div class="price-icon"><i class="fas fa-city"></i></div>
+                    <span>Stadsrit</span>
                 </div>
                 <div class="quick-price-card reveal reveal-delay-2" style="border-color:rgba(245,158,11,0.4);background:rgba(245,158,11,0.12);">
-                    <div class="price-icon"><i class="fas fa-plane-departure"></i></div><span>Schiphol</span><span class="pricetag">€45</span>
+                    <div class="price-icon"><i class="fas fa-plane-departure"></i></div>
+                    <span>Schiphol</span>
                 </div>
                 <div class="quick-price-card reveal reveal-delay-3">
-                    <div class="price-icon"><i class="fas fa-road"></i></div><span>Lange Afstand</span><span class="pricetag">€90</span>
+                    <div class="price-icon"><i class="fas fa-road"></i></div>
+                    <span>Lange Afstand</span>
                 </div>
             </div>
 
@@ -717,17 +722,16 @@
         <div class="section-overlay"></div>
         <div class="section-content">
             <span class="section-tag reveal">Uw Chauffeur</span>
-            <h2 class="section-title reveal reveal-delay-1">Ontmoet <span>Rayan</span></h2>
+            <h2 class="section-title reveal reveal-delay-1">Uw <span>Chauffeur</span></h2>
             <div class="driver-photo reveal reveal-delay-2"><i class="fas fa-user"></i></div>
             <div class="reveal reveal-delay-3">
-                <div class="driver-name">Rayan</div>
+                <div class="driver-name">Chauffeur</div>
                 <div class="driver-sub">Uw Persoonlijke Chauffeur · 8+ Jaar Ervaring</div>
                 <p class="driver-text">Ik geloof in persoonlijke service. U heeft direct contact met mij — geen app of callcenter. Ik ken de beste routes door Arnhem en heel Nederland en zorg dat u ontspannen en op tijd aankomt.</p>
             </div>
             <div class="driver-tags reveal reveal-delay-4">
                 <span class="driver-tag"><i class="fas fa-check"></i> TX-Keurmerk</span>
                 <span class="driver-tag"><i class="fas fa-check"></i> NL / EN / AR</span>
-                <span class="driver-tag"><i class="fas fa-check"></i> Gratis WiFi</span>
                 <span class="driver-tag"><i class="fas fa-check"></i> Rookvrij</span>
             </div>
         </div>
@@ -752,8 +756,6 @@
                             <span class="car-feature"><i class="fas fa-check"></i> Grote Kofferbak</span>
                             <span class="car-feature"><i class="fas fa-check"></i> Lederen Stoelen</span>
                             <span class="car-feature"><i class="fas fa-check"></i> Climate Control</span>
-                            <span class="car-feature"><i class="fas fa-check"></i> Gratis WiFi</span>
-                            <span class="car-feature"><i class="fas fa-check"></i> Zeer Ruim</span>
                         </div>
                     </div>
                 </div>
@@ -767,7 +769,6 @@
                             <span class="car-feature"><i class="fas fa-check"></i> Lederen Interieur</span>
                             <span class="car-feature"><i class="fas fa-check"></i> Climate Control</span>
                             <span class="car-feature"><i class="fas fa-check"></i> Privacy Glas</span>
-                            <span class="car-feature"><i class="fas fa-check"></i> Gratis WiFi</span>
                         </div>
                     </div>
                 </div>
@@ -781,7 +782,6 @@
                             <span class="car-feature"><i class="fas fa-check"></i> Stil & Comfortabel</span>
                             <span class="car-feature"><i class="fas fa-check"></i> Premium Interieur</span>
                             <span class="car-feature"><i class="fas fa-check"></i> Groot Bereik</span>
-                            <span class="car-feature"><i class="fas fa-check"></i> Milieuvriendelijk</span>
                         </div>
                     </div>
                 </div>
@@ -818,8 +818,8 @@
         <div class="section-content">
             <span class="section-tag reveal">Reviews</span>
             <h2 class="section-title reveal reveal-delay-1">Wat <span>Klanten</span> Zeggen</h2>
-            <div class="review-card reveal reveal-delay-1"><div class="review-stars">★★★★★</div><p class="review-text">"Rayan stond op Schiphol te wachten met een bordje. Zeer professioneel, hielp met bagage. Beste taxi ervaring!"</p><div class="review-author"><strong>Sarah J.</strong> · Toerist, VK</div></div>
-            <div class="review-card reveal reveal-delay-2"><div class="review-stars">★★★★★</div><p class="review-text">"Ik gebruik Rayan wekelijks voor zaken. Altijd op tijd, kent alle sluiproutes in Arnhem. Echt een aanrader!"</p><div class="review-author"><strong>Mark de V.</strong> · Zakenman</div></div>
+            <div class="review-card reveal reveal-delay-1"><div class="review-stars">★★★★★</div><p class="review-text">"Stond op Schiphol te wachten met een bordje. Zeer professioneel, hielp met bagage. Beste taxi ervaring!"</p><div class="review-author"><strong>Sarah J.</strong> · Toerist, VK</div></div>
+            <div class="review-card reveal reveal-delay-2"><div class="review-stars">★★★★★</div><p class="review-text">"Ik gebruik deze taxi wekelijks voor zaken. Altijd op tijd, kent alle sluiproutes in Arnhem. Echt een aanrader!"</p><div class="review-author"><strong>Mark de V.</strong> · Zakenman</div></div>
             <div class="review-card reveal reveal-delay-3"><div class="review-stars">★★★★★</div><p class="review-text">"Wachtte geduldig toen mijn vlucht vertraagd was. Eerlijke prijzen, top service. Dank je wel!"</p><div class="review-author"><strong>Lisa C.</strong> · Frequente Reiziger</div></div>
         </div>
     </section>
@@ -850,7 +850,7 @@
 
     <footer>
         <div style="max-width: 600px; margin: 0 auto;">
-            <p style="margin-bottom: 6px;">© 2026 Rayan Taxi Arnhem · KVK: 12345678 · TX-Keurmerk · Arnhem</p>
+            <p style="margin-bottom: 6px;">© 2026 TAXI RAYAN ARNHEM · KVK: 12345678 · TX-Keurmerk · Arnhem</p>
             <div style="border-top: 1px solid #1a1a1a; padding-top: 12px; margin-top: 12px;">
                 <p style="color: #888; font-size: 0.7rem;">Website by</p>
                 <p style="font-size: 0.8rem; font-weight: 600; color: var(--main-light); margin-bottom: 4px;">Cyber Spark Solutions</p>
