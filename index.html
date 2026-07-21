@@ -11,7 +11,7 @@
     <meta name="author" content="TAXI RAYAN ARNHEM">
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph (for Facebook/WhatsApp sharing) -->
+    <!-- Open Graph -->
     <meta property="og:title" content="TAXI RAYAN ARNHEM | Betrouwbare Taxi Service Arnhem">
     <meta property="og:description" content="Uw betrouwbare taxi chauffeur in Arnhem. 24/7 service, vaste prijzen. Boek via WhatsApp!">
     <meta property="og:type" content="website">
@@ -157,7 +157,7 @@
             align-items: center;
             text-align: center;
             padding: 80px 20px 40px;
-            background: #1a1a2e url('https://images.pexels.com/photos/10865209/pexels-photo-10865209.jpeg') center/cover no-repeat;
+            background: #1a1a2e url('https://images.pexels.com/photos/13781028/pexels-photo-13781028.jpeg') center/cover no-repeat;
             position: relative;
         }
         .hero::before {
@@ -293,6 +293,7 @@
         }
         .section-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 20px; line-height: 1.15; }
         .section-title span { color: var(--main-light); }
+        .service-sub { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 30px; }
 
         /* BOOKING */
         .booking-section {
@@ -339,7 +340,7 @@
             display: block;
             margin-bottom: 4px;
         }
-        .form-group input, .form-group textarea {
+        .form-group input, .form-group textarea, .form-group select {
             width: 100%;
             padding: 12px;
             background: rgba(255,255,255,0.08);
@@ -351,8 +352,9 @@
             transition: all 0.3s;
             resize: vertical;
         }
+        .form-group select option { color: #fff; background: #1a1a2e; }
         .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
-        .form-group input:focus, .form-group textarea:focus {
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
             outline: none;
             border-color: var(--main);
             background: rgba(255,255,255,0.12);
@@ -414,10 +416,7 @@
         .driver-tag i { color: var(--main-light); margin-right: 3px; font-size: 0.55rem; }
 
         /* CAR FLEET */
-        .cars-section {
-            background: #0a0a14;
-            text-align: center;
-        }
+        .cars-section { background: #0a0a14; text-align: center; }
         .cars-section .section-overlay { background: rgba(0,0,0,0.3); }
         .cars-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 800px; margin: 0 auto; }
         .car-card {
@@ -461,11 +460,10 @@
 
         /* SERVICE AREA */
         .service-area-section {
-            background: #0d0d18 url('https://images.pexels.com/photos/210182/pexels-photo-210182.jpeg') center/cover no-repeat;
+            background: #0d0d18 url('https://images.pexels.com/photos/1521580/pexels-photo-1521580.jpeg') center/cover no-repeat;
             text-align: center;
         }
         .service-area-section .section-overlay { background: rgba(0,0,0,0.75); }
-        .service-sub { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 30px; }
         .location-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -494,25 +492,12 @@
             transform: translateX(4px);
         }
 
-        /* COMPLAINT */
-        .complaint-section {
-            background: #0a0a14 url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg') center/cover no-repeat;
+        /* REVIEW FORM */
+        .review-form-section {
+            background: #0a0a14 url('https://images.pexels.com/photos/10554309/pexels-photo-10554309.jpeg') center/cover no-repeat;
             text-align: center;
         }
-        .complaint-section .section-overlay { background: rgba(0,0,0,0.7); }
-        .complaint-box {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 16px;
-            padding: 25px 20px;
-            max-width: 500px;
-            margin: 0 auto;
-            transition: all 0.3s;
-        }
-        .complaint-box:hover { border-color: rgba(245,158,11,0.2); }
-        .complaint-email { color: var(--main-light); font-size: 0.9rem; margin-top: 15px; }
-        .complaint-email a { color: var(--main-light); text-decoration: none; }
-        .complaint-email a:hover { text-decoration: underline; }
+        .review-form-section .section-overlay { background: rgba(0,0,0,0.7); }
 
         /* REVIEWS */
         .reviews-section {
@@ -533,6 +518,26 @@
         .review-text { font-size: 0.82rem; color: rgba(255,255,255,0.8); line-height: 1.5; font-style: italic; margin-bottom: 8px; }
         .review-author { font-size: 0.7rem; color: rgba(255,255,255,0.5); }
         .review-author strong { color: rgba(255,255,255,0.8); }
+
+        /* COMPLAINT */
+        .complaint-section {
+            background: #0a0a14 url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg') center/cover no-repeat;
+            text-align: center;
+        }
+        .complaint-section .section-overlay { background: rgba(0,0,0,0.7); }
+        .complaint-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 25px 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            transition: all 0.3s;
+        }
+        .complaint-box:hover { border-color: rgba(245,158,11,0.2); }
+        .complaint-email { color: var(--main-light); font-size: 0.9rem; margin-top: 15px; }
+        .complaint-email a { color: var(--main-light); text-decoration: none; }
+        .complaint-email a:hover { text-decoration: underline; }
 
         /* CTA */
         .cta-strip {
@@ -568,13 +573,7 @@
         .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
 
         /* FOOTER */
-        footer { 
-            background: #060610; 
-            text-align: center; 
-            padding: 30px 18px; 
-            font-size: 0.7rem; 
-            color: #555; 
-        }
+        footer { background: #060610; text-align: center; padding: 30px 18px; font-size: 0.7rem; color: #555; }
 
         /* WHATSAPP FLOAT */
         .wa-float {
@@ -673,6 +672,7 @@
             .section-title { font-size: 2rem; }
             .booking-card, .complaint-box { max-width: 480px; margin: 0 auto; }
             .driver-text { max-width: 480px; }
+            .quick-prices { max-width: 480px; margin: 0 auto 16px; }
             .location-grid { grid-template-columns: repeat(3, 1fr); }
             .cars-grid { grid-template-columns: repeat(3, 1fr); }
         }
@@ -702,16 +702,12 @@
         <div class="hero-badge" data-nl="Beschikbaar in Arnhem & Heel Nederland" data-en="Available in Arnhem & All Netherlands">Beschikbaar in Arnhem & Heel Nederland</div>
         <h1><span class="main-color">TAXI RAYAN</span><br>ARNHEM</h1>
         <p data-nl="Veilig, comfortabel en altijd op tijd. Direct contact met uw vaste chauffeur in Arnhem." data-en="Safe, comfortable and always on time. Direct contact with your dedicated driver in Arnhem.">Veilig, comfortabel en altijd op tijd. Direct contact met uw vaste chauffeur in Arnhem.</p>
-        
         <div class="hero-contact">
             <a href="tel:+31642489663"><i class="fas fa-phone"></i> <span data-nl="Bel:" data-en="Call:">Bel:</span> +31 6 42489663</a>
             <a href="https://wa.me/31642489663" target="_blank" class="wa-link"><i class="fab fa-whatsapp"></i> WhatsApp: +31 6 42489663</a>
         </div>
-
         <a href="#boek" class="btn-big" data-nl="Reserveer Nu Uw Rit" data-en="Book Your Ride Now"><i class="fas fa-calendar-check"></i> Reserveer Nu Uw Rit</a>
-        
         <div class="hero-trust">
-            <span><i class="fas fa-check-circle"></i> <span data-nl="TX-Keurmerk" data-en="TX-Certified">TX-Keurmerk</span></span>
             <span><i class="fas fa-star"></i> <span data-nl="4.9 Beoordeling" data-en="4.9 Rating">4.9 Beoordeling</span></span>
             <span><i class="fas fa-shield-alt"></i> <span data-nl="Verzekerd" data-en="Insured">Verzekerd</span></span>
             <span><i class="fas fa-clock"></i> 24/7</span>
@@ -724,22 +720,11 @@
         <div class="section-content">
             <span class="section-tag reveal" data-nl="Snel Boeken" data-en="Quick Booking">Snel Boeken</span>
             <h2 class="section-title reveal reveal-delay-1"><span data-nl="Boek Uw" data-en="Book Your">Boek Uw</span> <span>Rit</span></h2>
-            
             <div class="quick-prices">
-                <div class="quick-price-card reveal reveal-delay-1">
-                    <div class="price-icon"><i class="fas fa-city"></i></div>
-                    <span data-nl="Stadsrit" data-en="City Ride">Stadsrit</span>
-                </div>
-                <div class="quick-price-card reveal reveal-delay-2" style="border-color:rgba(245,158,11,0.4);background:rgba(245,158,11,0.12);">
-                    <div class="price-icon"><i class="fas fa-plane-departure"></i></div>
-                    <span data-nl="Schiphol" data-en="Schiphol">Schiphol</span>
-                </div>
-                <div class="quick-price-card reveal reveal-delay-3">
-                    <div class="price-icon"><i class="fas fa-road"></i></div>
-                    <span data-nl="Lange Afstand" data-en="Long Distance">Lange Afstand</span>
-                </div>
+                <div class="quick-price-card reveal reveal-delay-1"><div class="price-icon"><i class="fas fa-city"></i></div><span data-nl="Stadsrit" data-en="City Ride">Stadsrit</span></div>
+                <div class="quick-price-card reveal reveal-delay-2" style="border-color:rgba(245,158,11,0.4);background:rgba(245,158,11,0.12);"><div class="price-icon"><i class="fas fa-plane-departure"></i></div><span data-nl="Schiphol" data-en="Schiphol">Schiphol</span></div>
+                <div class="quick-price-card reveal reveal-delay-3"><div class="price-icon"><i class="fas fa-road"></i></div><span data-nl="Lange Afstand" data-en="Long Distance">Lange Afstand</span></div>
             </div>
-
             <div class="booking-card reveal reveal-delay-2">
                 <form id="bookingForm">
                     <div class="form-group"><label data-nl="📍 Ophaallocatie" data-en="📍 Pickup Location">📍 Ophaallocatie</label><input type="text" data-nl-placeholder="Waar zal ik u ophalen?" data-en-placeholder="Where should I pick you up?" placeholder="Waar zal ik u ophalen?" required></div>
@@ -765,14 +750,12 @@
                 <p class="driver-text" data-nl="Ik geloof in persoonlijke service. U heeft direct contact met mij — geen app of callcenter. Ik ken de beste routes door Arnhem en heel Nederland en zorg dat u ontspannen en op tijd aankomt." data-en="I believe in personal service. You have direct contact with me — no app or call center. I know the best routes through Arnhem and all of the Netherlands and ensure you arrive relaxed and on time.">Ik geloof in persoonlijke service. U heeft direct contact met mij — geen app of callcenter. Ik ken de beste routes door Arnhem en heel Nederland en zorg dat u ontspannen en op tijd aankomt.</p>
             </div>
             <div class="driver-tags reveal reveal-delay-4">
-                <span class="driver-tag"><i class="fas fa-check"></i> <span data-nl="TX-Keurmerk" data-en="TX-Certified">TX-Keurmerk</span></span>
                 <span class="driver-tag"><i class="fas fa-check"></i> NL / EN / AR</span>
                 <span class="driver-tag"><i class="fas fa-check"></i> <span data-nl="Rookvrij" data-en="Smoke-free">Rookvrij</span></span>
             </div>
         </div>
     </section>
 
-    <!-- CAR FLEET -->
     <section class="cars-section" id="wagens">
         <div class="section-overlay"></div>
         <div class="section-content">
@@ -783,42 +766,15 @@
                 <div class="car-card featured reveal reveal-delay-1">
                     <span class="car-badge" data-nl="⭐ Hoofdauto" data-en="⭐ Main Car">⭐ Hoofdauto</span>
                     <div class="car-image" style="background-image: url('https://images.unsplash.com/photo-1662128364478-e89fd638ad80?w=600'); background-position: center 89%;"></div>
-                    <div class="car-info">
-                        <h3>Volvo V90 Station Car</h3>
-                        <p class="car-type" data-nl="Luxe & Comfort · Ruime Stationwagen" data-en="Luxury & Comfort · Spacious Station Wagon">Luxe & Comfort · Ruime Stationwagen</p>
-                        <div class="car-features">
-                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="4 Passagiers" data-en="4 Passengers">4 Passagiers</span></span>
-                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Grote Kofferbak" data-en="Large Trunk">Grote Kofferbak</span></span>
-                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Lederen Stoelen" data-en="Leather Seats">Lederen Stoelen</span></span>
-                            <span class="car-feature"><i class="fas fa-check"></i> Climate Control</span>
-                        </div>
-                    </div>
+                    <div class="car-info"><h3>Volvo V90 Station Car</h3><p class="car-type" data-nl="Luxe & Comfort · Ruime Stationwagen" data-en="Luxury & Comfort · Spacious Station Wagon">Luxe & Comfort · Ruime Stationwagen</p><div class="car-features"><span class="car-feature"><i class="fas fa-check"></i> <span data-nl="4 Passagiers" data-en="4 Passengers">4 Passagiers</span></span><span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Grote Kofferbak" data-en="Large Trunk">Grote Kofferbak</span></span><span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Lederen Stoelen" data-en="Leather Seats">Lederen Stoelen</span></span><span class="car-feature"><i class="fas fa-check"></i> Climate Control</span></div></div>
                 </div>
                 <div class="car-card reveal reveal-delay-2">
                     <div class="car-image" style="background-image: url('https://images.pexels.com/photos/17233277/pexels-photo-17233277.jpeg');"></div>
-                    <div class="car-info">
-                        <h3>Mercedes E-Klasse</h3>
-                        <p class="car-type" data-nl="Business Sedan · Elegant & Stijlvol" data-en="Business Sedan · Elegant & Stylish">Business Sedan · Elegant & Stijlvol</p>
-                        <div class="car-features">
-                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="4 Passagiers" data-en="4 Passengers">4 Passagiers</span></span>
-                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Lederen Interieur" data-en="Leather Interior">Lederen Interieur</span></span>
-                            <span class="car-feature"><i class="fas fa-check"></i> Climate Control</span>
-                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Privacy Glas" data-en="Privacy Glass">Privacy Glas</span></span>
-                        </div>
-                    </div>
+                    <div class="car-info"><h3>Mercedes E-Klasse</h3><p class="car-type" data-nl="Business Sedan · Elegant & Stijlvol" data-en="Business Sedan · Elegant & Stylish">Business Sedan · Elegant & Stijlvol</p><div class="car-features"><span class="car-feature"><i class="fas fa-check"></i> <span data-nl="4 Passagiers" data-en="4 Passengers">4 Passagiers</span></span><span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Lederen Interieur" data-en="Leather Interior">Lederen Interieur</span></span><span class="car-feature"><i class="fas fa-check"></i> Climate Control</span><span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Privacy Glas" data-en="Privacy Glass">Privacy Glas</span></span></div></div>
                 </div>
                 <div class="car-card reveal reveal-delay-3">
                     <div class="car-image" style="background-image: url('https://images.pexels.com/photos/26957121/pexels-photo-26957121.jpeg');"></div>
-                    <div class="car-info">
-                        <h3>Tesla Model S</h3>
-                        <p class="car-type" data-nl="100% Elektrisch · Zero Emissie" data-en="100% Electric · Zero Emission">100% Elektrisch · Zero Emissie</p>
-                        <div class="car-features">
-                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="4 Passagiers" data-en="4 Passengers">4 Passagiers</span></span>
-                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Stil & Comfortabel" data-en="Quiet & Comfortable">Stil & Comfortabel</span></span>
-                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Premium Interieur" data-en="Premium Interior">Premium Interieur</span></span>
-                            <span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Groot Bereik" data-en="Long Range">Groot Bereik</span></span>
-                        </div>
-                    </div>
+                    <div class="car-info"><h3>Tesla Model S</h3><p class="car-type" data-nl="100% Elektrisch · Zero Emissie" data-en="100% Electric · Zero Emission">100% Elektrisch · Zero Emissie</p><div class="car-features"><span class="car-feature"><i class="fas fa-check"></i> <span data-nl="4 Passagiers" data-en="4 Passengers">4 Passagiers</span></span><span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Stil & Comfortabel" data-en="Quiet & Comfortable">Stil & Comfortabel</span></span><span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Premium Interieur" data-en="Premium Interior">Premium Interieur</span></span><span class="car-feature"><i class="fas fa-check"></i> <span data-nl="Groot Bereik" data-en="Long Range">Groot Bereik</span></span></div></div>
                 </div>
             </div>
         </div>
@@ -831,19 +787,7 @@
             <h2 class="section-title reveal reveal-delay-1"><span data-nl="Waar Ik" data-en="Where I">Waar Ik</span> <span data-nl="Rijd" data-en="Drive">Rijd</span></h2>
             <p class="service-sub reveal reveal-delay-1" data-nl="Professionele taxiservice in Arnhem en omgeving. Vaste prijzen, altijd op tijd." data-en="Professional taxi service in Arnhem and surroundings. Fixed prices, always on time.">Professionele taxiservice in Arnhem en omgeving. Vaste prijzen, altijd op tijd.</p>
             <div class="location-grid reveal reveal-delay-2">
-                <a href="#" class="location-item">TAXI ARNHEM</a><a href="#" class="location-item">TAXI DRIEL</a>
-                <a href="#" class="location-item">TAXI HETEREN</a><a href="#" class="location-item">TAXI HUISSEN</a>
-                <a href="#" class="location-item">TAXI ELST</a><a href="#" class="location-item">TAXI HEELSUM</a>
-                <a href="#" class="location-item">TAXI DOORWERTH</a><a href="#" class="location-item">TAXI RENKUM</a>
-                <a href="#" class="location-item">TAXI WOLFHEZE</a><a href="#" class="location-item">TAXI VLEP</a>
-                <a href="#" class="location-item">TAXI ROZENDAAL</a><a href="#" class="location-item">TAXI RHEDEN</a>
-                <a href="#" class="location-item">TAXI ZEVENAAR</a><a href="#" class="location-item">TAXI DUIVEN</a>
-                <a href="#" class="location-item">TAXI ANIMALS</a><a href="#" class="location-item">TAXI BEMMEL</a>
-                <a href="#" class="location-item">TAXI OOSTERBEEK</a><a href="#" class="location-item">TAXI DOESBURG</a>
-                <a href="#" class="location-item">TAXI LATHUM</a><a href="#" class="location-item">TAXI GENDT</a>
-                <a href="#" class="location-item">TAXI WESTERVOORT</a><a href="#" class="location-item">TAXI ANGEREN</a>
-                <a href="#" class="location-item">TAXI GROESSEN</a><a href="#" class="location-item">TAXI NIJMEGEN</a>
-                <a href="#" class="location-item">TAXI EDE</a>
+                <a href="#" class="location-item">TAXI ARNHEM</a><a href="#" class="location-item">TAXI DRIEL</a><a href="#" class="location-item">TAXI HETEREN</a><a href="#" class="location-item">TAXI HUISSEN</a><a href="#" class="location-item">TAXI ELST</a><a href="#" class="location-item">TAXI HEELSUM</a><a href="#" class="location-item">TAXI DOORWERTH</a><a href="#" class="location-item">TAXI RENKUM</a><a href="#" class="location-item">TAXI WOLFHEZE</a><a href="#" class="location-item">TAXI VLEP</a><a href="#" class="location-item">TAXI ROZENDAAL</a><a href="#" class="location-item">TAXI RHEDEN</a><a href="#" class="location-item">TAXI ZEVENAAR</a><a href="#" class="location-item">TAXI DUIVEN</a><a href="#" class="location-item">TAXI ANIMALS</a><a href="#" class="location-item">TAXI BEMMEL</a><a href="#" class="location-item">TAXI OOSTERBEEK</a><a href="#" class="location-item">TAXI DOESBURG</a><a href="#" class="location-item">TAXI LATHUM</a><a href="#" class="location-item">TAXI GENDT</a><a href="#" class="location-item">TAXI WESTERVOORT</a><a href="#" class="location-item">TAXI ANGEREN</a><a href="#" class="location-item">TAXI GROESSEN</a><a href="#" class="location-item">TAXI NIJMEGEN</a><a href="#" class="location-item">TAXI EDE</a>
             </div>
         </div>
     </section>
@@ -856,6 +800,24 @@
             <div class="review-card reveal reveal-delay-1"><div class="review-stars">★★★★★</div><p class="review-text" data-nl="Stond op Schiphol te wachten met een bordje. Zeer professioneel, hielp met bagage. Beste taxi ervaring!" data-en="Was waiting at Schiphol with a sign. Very professional, helped with luggage. Best taxi experience!">Stond op Schiphol te wachten met een bordje. Zeer professioneel, hielp met bagage. Beste taxi ervaring!</p><div class="review-author"><strong>Sarah J.</strong> · <span data-nl="Toerist, VK" data-en="Tourist, UK">Toerist, VK</span></div></div>
             <div class="review-card reveal reveal-delay-2"><div class="review-stars">★★★★★</div><p class="review-text" data-nl="Ik gebruik deze taxi wekelijks voor zaken. Altijd op tijd, kent alle sluiproutes in Arnhem. Echt een aanrader!" data-en="I use this taxi weekly for business. Always on time, knows all the shortcuts in Arnhem. Highly recommended!">Ik gebruik deze taxi wekelijks voor zaken. Altijd op tijd, kent alle sluiproutes in Arnhem. Echt een aanrader!</p><div class="review-author"><strong>Mark de V.</strong> · <span data-nl="Zakenman" data-en="Businessman">Zakenman</span></div></div>
             <div class="review-card reveal reveal-delay-3"><div class="review-stars">★★★★★</div><p class="review-text" data-nl="Wachtte geduldig toen mijn vlucht vertraagd was. Eerlijke prijzen, top service. Dank je wel!" data-en="Waited patiently when my flight was delayed. Fair prices, top service. Thank you!">Wachtte geduldig toen mijn vlucht vertraagd was. Eerlijke prijzen, top service. Dank je wel!</p><div class="review-author"><strong>Lisa C.</strong> · <span data-nl="Frequente Reiziger" data-en="Frequent Traveler">Frequente Reiziger</span></div></div>
+        </div>
+    </section>
+
+    <!-- SUBMIT REVIEW -->
+    <section class="review-form-section" id="review-form">
+        <div class="section-overlay"></div>
+        <div class="section-content">
+            <span class="section-tag reveal" data-nl="Schrijf een Review" data-en="Write a Review">Schrijf een Review</span>
+            <h2 class="section-title reveal reveal-delay-1"><span data-nl="Deel uw" data-en="Share Your">Deel uw</span> <span data-nl="Ervaring" data-en="Experience">Ervaring</span></h2>
+            <p class="service-sub reveal reveal-delay-1" data-nl="Wij waarderen uw feedback! Laat ons weten hoe uw rit was." data-en="We value your feedback! Let us know how your ride was.">Wij waarderen uw feedback! Laat ons weten hoe uw rit was.</p>
+            <div class="booking-card reveal reveal-delay-2" style="max-width:480px;margin:0 auto;">
+                <form id="reviewForm">
+                    <div class="form-group"><label data-nl="👤 Uw Naam" data-en="👤 Your Name">👤 Uw Naam</label><input type="text" data-nl-placeholder="Volledige naam" data-en-placeholder="Full name" placeholder="Volledige naam" required></div>
+                    <div class="form-group"><label data-nl="⭐ Beoordeling" data-en="⭐ Rating">⭐ Beoordeling</label><select required><option value="" style="color:#888;">Selecteer beoordeling</option><option value="5">⭐⭐⭐⭐⭐ - Uitstekend</option><option value="4">⭐⭐⭐⭐ - Zeer Goed</option><option value="3">⭐⭐⭐ - Goed</option><option value="2">⭐⭐ - Matig</option><option value="1">⭐ - Slecht</option></select></div>
+                    <div class="form-group"><label data-nl="📝 Uw Review" data-en="📝 Your Review">📝 Uw Review</label><textarea data-nl-placeholder="Schrijf uw ervaring..." data-en-placeholder="Write your experience..." placeholder="Schrijf uw ervaring..." rows="3" required></textarea></div>
+                    <button type="submit" class="btn-submit" style="background:var(--main);color:#1a1a2e;"><i class="fas fa-star"></i> <span data-nl="Review Versturen" data-en="Submit Review">Review Versturen</span></button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -889,10 +851,7 @@
             <div style="border-top: 1px solid #1a1a1a; padding-top: 12px; margin-top: 12px;">
                 <p style="color: #888; font-size: 0.7rem;" data-nl="Website door" data-en="Website by">Website door</p>
                 <p style="font-size: 0.8rem; font-weight: 600; color: var(--main-light); margin-bottom: 4px;">Cyber Spark Solutions</p>
-                <p style="font-size: 0.65rem; color: #666;">
-                    <a href="mailto:mohidakabr33@gmail.com" style="color: #888; text-decoration: none;">mohidakabr33@gmail.com</a> · 
-                    <a href="tel:+923092246156" style="color: #888; text-decoration: none;">+92 309 2246156</a>
-                </p>
+                <p style="font-size: 0.65rem; color: #666;"><a href="mailto:mohidakabr33@gmail.com" style="color: #888; text-decoration: none;">mohidakabr33@gmail.com</a> · <a href="tel:+923092246156" style="color: #888; text-decoration: none;">+92 309 2246156</a></p>
             </div>
         </div>
     </footer>
@@ -914,9 +873,7 @@
         
         function switchLang(lang) {
             currentLang = lang;
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.lang === lang);
-            });
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
             document.querySelectorAll('[data-nl][data-en]').forEach(el => {
                 if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
                     const placeholder = el.getAttribute(`data-${lang}-placeholder`);
@@ -930,9 +887,7 @@
             });
         }
         
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', () => switchLang(btn.dataset.lang));
-        });
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => switchLang(btn.dataset.lang)));
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -948,6 +903,7 @@
         dtInput.setAttribute('min', now.toISOString().slice(0,16));
         dtInput.value = now.toISOString().slice(0,16);
 
+        // Booking Form
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const f = this;
@@ -958,11 +914,30 @@
             const datetime = f.querySelector('input[type="datetime-local"]').value;
             const msg = encodeURIComponent(`🚖 *${currentLang === 'nl' ? 'Nieuwe Rit Aanvraag' : 'New Ride Request'}*%0A%0A👤 ${name}%0A📞 ${phone}%0A📍 ${pickup} → ${dropoff}%0A📅 ${datetime}`);
             document.getElementById('popupWaBtn').href = `https://wa.me/31642489663?text=${msg}`;
+            document.getElementById('popupTitle').textContent = currentLang === 'nl' ? 'Aanvraag Verstuurd!' : 'Request Sent!';
+            document.getElementById('popupMsg').textContent = currentLang === 'nl' ? 'Ik bevestig uw boeking binnen enkele minuten via WhatsApp.' : 'I will confirm your booking within a few minutes via WhatsApp.';
             document.getElementById('popup').classList.add('active');
             f.reset();
             dtInput.value = now.toISOString().slice(0,16);
         });
 
+        // Review Form
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const f = this;
+            const name = f.querySelector('input[type="text"]').value;
+            const rating = f.querySelector('select').value;
+            const review = f.querySelector('textarea').value;
+            const stars = '⭐'.repeat(rating);
+            const msg = encodeURIComponent(`${stars} *Nieuwe Review*%0A%0A👤 ${name}%0A📝 ${review}%0A⭐ ${rating}/5`);
+            document.getElementById('popupWaBtn').href = `https://wa.me/31642489663?text=${msg}`;
+            document.getElementById('popupTitle').textContent = currentLang === 'nl' ? 'Review Verstuurd!' : 'Review Sent!';
+            document.getElementById('popupMsg').textContent = currentLang === 'nl' ? 'Bedankt voor uw review! Uw feedback wordt gewaardeerd.' : 'Thank you for your review! Your feedback is appreciated.';
+            document.getElementById('popup').classList.add('active');
+            f.reset();
+        });
+
+        // Complaint Form
         document.getElementById('complaintForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const f = this;
@@ -971,6 +946,8 @@
             const complaint = f.querySelector('textarea').value;
             const msg = encodeURIComponent(`⚠️ *${currentLang === 'nl' ? 'Nieuwe Klacht' : 'New Complaint'}*%0A%0A👤 ${name}%0A📞 ${phone}%0A📝 ${complaint}`);
             document.getElementById('popupWaBtn').href = `https://wa.me/31642489663?text=${msg}`;
+            document.getElementById('popupTitle').textContent = currentLang === 'nl' ? 'Klacht Verstuurd!' : 'Complaint Sent!';
+            document.getElementById('popupMsg').textContent = currentLang === 'nl' ? 'Wij nemen zo snel mogelijk contact met u op.' : 'We will contact you as soon as possible.';
             document.getElementById('popup').classList.add('active');
             f.reset();
         });
