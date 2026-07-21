@@ -49,7 +49,7 @@ Professional taxi booking website for TAXI RAYAN ARNHEM, serving Arnhem and surr
 
 ---
 
-##📞 Contact
+## 📞 Contact
 TAXI RAYAN ARNHEM
 
 📞 Phone: +31 6 42489663
@@ -58,7 +58,7 @@ TAXI RAYAN ARNHEM
 
 🌐 Web: www.taxirayanarnhem.nl
 
-##👨‍💻 Developed By
+## 👨‍💻 Developed By
 Cyber Spark Solutions 
 
 Developer : Mohid Akbar
