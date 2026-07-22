@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QLVFL1194F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QLVFL1194F');
+    </script>
+    
     <!-- SEO Meta Tags -->
     <title>TAXI RAYAN ARNHEM | Betrouwbare Taxi Service Arnhem | 24/7 | Vaste Prijzen</title>
     <meta name="description" content="TAXI RAYAN ARNHEM - Uw betrouwbare taxi chauffeur in Arnhem en omgeving. Schiphol transfers, stadsritten & lange afstand. Vaste prijzen, 24/7 service. TX-Keurmerk. Boek direct via WhatsApp: +31 6 42489663.">
@@ -16,6 +25,52 @@
     <meta property="og:description" content="Uw betrouwbare taxi chauffeur in Arnhem. 24/7 service, vaste prijzen. Boek via WhatsApp!">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.taxirayanarnhem.nl">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TaxiService",
+      "name": "TAXI RAYAN ARNHEM",
+      "url": "https://www.taxirayanarnhem.nl",
+      "telephone": "+31642489663",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Abdijhof 31",
+        "addressLocality": "Arnhem",
+        "postalCode": "6834 EE",
+        "addressRegion": "Gelderland",
+        "addressCountry": "NL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.9851,
+        "longitude": 5.8987
+      },
+      "areaServed": [
+        "Arnhem", "Driel", "Heteren", "Huissen", "Elst", "Heelsum",
+        "Doorwerth", "Renkum", "Wolfheze", "Velp", "Rozendaal", "Rheden",
+        "Zevenaar", "Duiven", "Bemmel", "Oosterbeek", "Doesburg",
+        "Lathum", "Gendt", "Westervoort", "Angeren", "Groessen",
+        "Nijmegen", "Ede", "Schiphol"
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday",
+          "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "3"
+      }
+    }
+    </script>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -708,6 +763,7 @@
         </div>
         <a href="#boek" class="btn-big" data-nl="Reserveer Nu Uw Rit" data-en="Book Your Ride Now"><i class="fas fa-calendar-check"></i> Reserveer Nu Uw Rit</a>
         <div class="hero-trust">
+            <span><i class="fas fa-check-circle"></i> <span data-nl="TX-Keurmerk" data-en="TX-Certified">TX-Keurmerk</span></span>
             <span><i class="fas fa-star"></i> <span data-nl="4.9 Beoordeling" data-en="4.9 Rating">4.9 Beoordeling</span></span>
             <span><i class="fas fa-shield-alt"></i> <span data-nl="Verzekerd" data-en="Insured">Verzekerd</span></span>
             <span><i class="fas fa-clock"></i> 24/7</span>
@@ -750,6 +806,7 @@
                 <p class="driver-text" data-nl="Ik geloof in persoonlijke service. U heeft direct contact met mij — geen app of callcenter. Ik ken de beste routes door Arnhem en heel Nederland en zorg dat u ontspannen en op tijd aankomt." data-en="I believe in personal service. You have direct contact with me — no app or call center. I know the best routes through Arnhem and all of the Netherlands and ensure you arrive relaxed and on time.">Ik geloof in persoonlijke service. U heeft direct contact met mij — geen app of callcenter. Ik ken de beste routes door Arnhem en heel Nederland en zorg dat u ontspannen en op tijd aankomt.</p>
             </div>
             <div class="driver-tags reveal reveal-delay-4">
+                <span class="driver-tag"><i class="fas fa-check"></i> <span data-nl="TX-Keurmerk" data-en="TX-Certified">TX-Keurmerk</span></span>
                 <span class="driver-tag"><i class="fas fa-check"></i> NL / EN / AR</span>
                 <span class="driver-tag"><i class="fas fa-check"></i> <span data-nl="Rookvrij" data-en="Smoke-free">Rookvrij</span></span>
             </div>
@@ -803,7 +860,6 @@
         </div>
     </section>
 
-    <!-- SUBMIT REVIEW -->
     <section class="review-form-section" id="review-form">
         <div class="section-overlay"></div>
         <div class="section-content">
@@ -903,7 +959,6 @@
         dtInput.setAttribute('min', now.toISOString().slice(0,16));
         dtInput.value = now.toISOString().slice(0,16);
 
-        // Booking Form
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const f = this;
@@ -921,7 +976,6 @@
             dtInput.value = now.toISOString().slice(0,16);
         });
 
-        // Review Form
         document.getElementById('reviewForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const f = this;
@@ -937,7 +991,6 @@
             f.reset();
         });
 
-        // Complaint Form
         document.getElementById('complaintForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const f = this;
